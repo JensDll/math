@@ -1,0 +1,57 @@
+\chapter{Zahlentheorie}
+Es seien $a, b$ natürliche Zahlen, für die gilt:
+$a \mid b^2, b^2 \mid a^3, a^3 \mid b^4, b^4 \mid a^5, \dots$.\\
+Zeigen sie: $a = b$ \parencite[33]{book:zahlentheorie}.
+\begin{proof}
+Es gibt $v_i \in \N{}$ mit
+$b^2 = av_1, a^3 = b^2v_2, b^4 = a^3v_3, a^5 = b^4v_4, \dotsc$.
+Es sind
+\begin{align*}
+  a & = p_1^{m_1} \cdot p_2^{m_2} \cdot \ldots \cdot p_r^{m_r} \\
+  b & = p_1^{\mu_1} \cdot p_2^{\mu_2} \cdot \ldots \cdot p_r^{\mu_r}
+\end{align*}
+die kanonischen Primzerlegungen von $a$ und $b$.
+Für $a = b$ ist die Behauptung offensichtlich richtig.
+Angenommen $a \neq b$ und es werden zwei Fälle unterschieden: \\[4pt]
+$0 < a < b$: Die Zahl $a$ besitzt als Teiler von $b^2$ einen Primfaktor
+$p^{\mu - n} := p_i^{\mu_i - n}$ mit $0 < n \leq \mu$ und $i = 1,\dotsc,r$.
+Es gilt $p^{\mu - n} \mid b^2$
+d.\,h. $b^2 = p^{\mu - n}v_1$, was äquivalent zu
+$p^{2\mu} = p^{\mu - n} \cdot p^{\mu + n}$ ist.
+Wird dieses Schema fortgeführt, entstehen die Gleichungen
+\begin{align*}
+p^{3\mu - 3n} & = p^{2\mu}      \cdot p^{\mu - 3n} \\
+p^{4\mu}      & = p^{3\mu - 3n} \cdot p^{\mu + 3n} \\
+p^{5\mu - 5n} & = p^{4\mu}      \cdot p^{\mu - 5n} \\
+p^{6\mu}      & = p^{5\mu - 5n} \cdot p^{\mu + 5n} \\
+\vdots \\
+p^{2k\mu} & = p^{(2k - 1)\mu - (2k - 1)n} \cdot p^{\mu + (2k - 1)n}  \\
+\label{eq:fall1} \tag{$*$}
+p^{(2k + 1)\mu - (2k + 1)n} & = p^{2k\mu} \cdot p^{\mu - (2k + 1)n}
+\end{align*}
+mit $k \in \Nx{}$. Im allgemeinen lässt sich aus \eqref{eq:fall1}
+die Ungleichung
+\begin{equation*}
+\mu - 2kn - n \geq 0
+\end{equation*}
+ableiten. $k$ ist frei wählbar, man setze $k = \mu$ und führt
+die ursprüngliche Behauptung mit $(1 - 2n)\mu - n \geq 0$ zum Widerspruch. \\[4pt]
+$a > b$: Die Zahl $a$ besitzt als Teiler von $b^2$ einen Primfaktor
+$p^{\mu + n} := p_i^{\mu_i + n}$ mit $0 < n \leq \mu$ und $i = 1,\dotsc,r$.
+Wäre $n > \mu$ gilt $a \nmid b^2$ und es bleibt nichts mehr zu zeigen.
+Wie zuvor gilt $p^{\mu + n} \mid b^2$,
+woraus nach demselben Prinzip die Gleichung
+$p^{2\mu} = p^{\mu + n} \cdot p^{\mu - n}$
+und letztendlich
+\begin{align*}
+\label{eq:fall2} \tag{$**$}
+p^{2k\mu} & = p^{(2k - 1)\mu + (2k - 1)n} \cdot p^{\mu - (2k - 1)n} \\
+p^{(2k + 1)\mu + (2k + 1)n} & = p^{2k\mu} \cdot p^{\mu + (2k + 1)n}
+\end{align*}
+folgt. Aus \eqref{eq:fall2} kann die Ungleichung
+\begin{equation*}
+\mu - 2kn + n \geq 0
+\end{equation*}
+abgeleitet werden. Man setze $k = 2\mu$ und erzeugt mit
+$(1 - 4n)\mu + n \geq 0$ auch in diesem Fall einen Widerspruch.
+\end{proof}

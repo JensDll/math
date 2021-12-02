@@ -1,0 +1,40 @@
+\documentclass[
+  ngerman,
+  a4paper,
+  12pt
+]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, german]{babel}
+\usepackage[left=2.5cm, right=2.5cm]{geometry}
+\usepackage{csquotes}
+\usepackage{setspace}
+
+\usepackage[unicode]{hyperref}
+\hypersetup{
+  linkcolor = Red,
+  filecolor = Magenta,
+  urlcolor = Green,
+  citecolor = Cyan
+}
+
+\usepackage[style = authoryear-ibid]{biblatex}
+\addbibresource{preamble/main.bib}
+
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\input{preamble/commands.tex}
+
+\begin{document}
+\pagenumbering{Roman}
+\onehalfspacing
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\include{chapters/zahlentheorie/main.tex}
+\printbibliography[title = Literaturverzeichnis]
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\end{document}

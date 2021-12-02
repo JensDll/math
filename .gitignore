@@ -1,0 +1,12 @@
+*.*
+env
+
+!*.png
+!*.tex
+!.gitignore
+!.spellignore
+!*.bib
+!.vscode
+!.vscode/**
+!*.pdf
+!*.py
