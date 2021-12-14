@@ -3,7 +3,7 @@
   "[latex]": {
     "editor.formatOnSave": false
   },
-  "cSpell.language": "de-de",
+  "cSpell.language": "de-de, en-us",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -24,5 +24,6 @@
     "**/*.synctex.gz": true,
     "**/*.toc": true,
     "**/*.lot": true
-  }
+  },
+  "cSpell.words": ["Primzerlegung"]
 }

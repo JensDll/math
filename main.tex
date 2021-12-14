@@ -2,7 +2,7 @@
   ngerman,
   a4paper,
   12pt
-]{report}
+]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english, german]{babel}
@@ -34,7 +34,9 @@
 \tableofcontents
 \newpage
 \pagenumbering{arabic}
-\include{chapters/zahlentheorie/main.tex}
+
+\include{elementare-zahlentheorie/main.tex}
+
 \printbibliography[title = Literaturverzeichnis]
-\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\addcontentsline{toc}{part}{Literaturverzeichnis}
 \end{document}
