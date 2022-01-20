@@ -1,5 +1,36 @@
 \section{Seite 33}
 
+\subsection{Aufgabe 3}
+Seien $a$ und $b$ positive natürliche Zahlen mit der Eigenschaft, dass
+es keine Primzahl gibt, die zugleich $a$ und $b$ teilt. Beweisen sie:
+Gibt es ein $c \in \MN{}$ mit $ab = c^2$, so
+existieren $x,y \in \MN$ mit $a = x^2$ und $b = y^2$.
+\begin{proof}
+Es ist $c$ eine beliebige zusammengesetzte Zahl. Dann ist
+$c^2 = p_1^{2m_1}p_2^{2m_2} \cdot \ldots \cdot p_r^{2m_r}$
+ihre kanonische Primzerlegung. Man überlege jetzt,
+wie diese Faktoren zwischen $a$ und $b$ verteilt sein können.
+Damit keine Primzahl in $a$ oder $b$ gemeinsam vorkommt, müssen die
+Primpotenzen $p_i^{2m_i}$ vollständig zwischen $a$ und $b$ verteilt sein.
+Somit sind $a,b$ immer Quadratzahlen:
+\begin{equation*}
+  a,b = p_i^{m_i}p_i^{m_i} \qquad i = 1,\dotsc,r\
+\end{equation*}
+\end{proof}
+\noindent
+Zum Beispiel:
+\begin{align*}
+c^2 = 2^45^2 &= 20^2 \\
+1) \quad ab = (2^4)(5^2) &= 4^2 \cdot 5^2
+\end{align*}
+\vspace{-1.2cm}
+\begin{align*}
+c^2 = 2^23^25^27^2 &= 210^2 \\
+1) \quad ab = (2^23^25^2)(7^2) &= 30^2 \cdot 7^2 \\
+2) \quad ab = (2^23^2)(5^27^2) &= 6^2 \cdot 35^2 \\
+3) \quad ab = (2^2)(3^25^27^2) &= 2^2 \cdot 105^2
+\end{align*}
+
 \subsection{Aufgabe 4}
 Es seien $a, b$ natürliche Zahlen, für die gilt:
 $a \mid b^2, b^2 \mid a^3, a^3 \mid b^4, b^4 \mid a^5, \dots$.\\
@@ -13,10 +44,11 @@ Es sind
   a & = p_1^{m_1} \cdot p_2^{m_2} \cdot \ldots \cdot p_r^{m_r} \\
   b & = p_1^{\mu_1} \cdot p_2^{\mu_2} \cdot \ldots \cdot p_r^{\mu_r}
 \end{align*}
-die kanonischen Primzerlegungen von $a$ und $b$.
+die kanonische Primzerlegung von $a$ und $b$.
 Für $a = b$ ist die Behauptung offensichtlich richtig.
-Angenommen $a \neq b$ und es werden zwei Fälle unterschieden: \\[4pt]
-$0 < a < b$: Die Zahl $a$ besitzt als Teiler von $b^2$ einen Primfaktor
+Angenommen $a \neq b$ und es werden zwei Fälle unterschieden:
+\paragraph{1) Fall:}
+Es gilt $0 < a < b$. Die Zahl $a$ besitzt als Teiler von $b^2$ einen Primfaktor
 $p^{\mu - n} := p_i^{\mu_i - n}$ mit $0 < n \leq \mu$ und $i = 1,\dotsc,r$.
 Es gilt $p^{\mu - n} \mid b^2$
 d.\,h. $b^2 = p^{\mu - n}v_1$, was äquivalent zu
@@ -38,8 +70,9 @@ die Ungleichung
 \mu - 2kn - n \geq 0
 \end{equation*}
 ableiten. $k$ ist frei wählbar, man setze $k = \mu$ und führt
-die ursprüngliche Behauptung mit $(1 - 2n)\mu - n \geq 0$ zum Widerspruch. \\[4pt]
-$a > b$: Die Zahl $a$ besitzt als Teiler von $b^2$ einen Primfaktor
+die ursprüngliche Behauptung mit $(1 - 2n)\mu - n \geq 0$ zum Widerspruch.
+\paragraph{2) Fall:}
+Es gilt $a > b$. Die Zahl $a$ besitzt als Teiler von $b^2$ einen Primfaktor
 $p^{\mu + n} := p_i^{\mu_i + n}$ mit $0 < n \leq \mu$ und $i = 1,\dotsc,r$.
 Wäre $n > \mu$ gilt $a \nmid b^2$ und es bleibt nichts mehr zu zeigen.
 Wie zuvor gilt $p^{\mu + n} \mid b^2$,
