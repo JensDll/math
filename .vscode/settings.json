@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
   "[latex]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "cSpell.language": "de-de, en-us",
   "files.exclude": {

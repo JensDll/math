@@ -4,68 +4,69 @@
 Seien $a,b,c$ Ziffern aus der Menge $\{0,1,2,\dotsc,9\}$ und $a \neq 0$.
 Zeigen Sie: 13 teilt die natürliche Zahl $abcabc$ (Zifferndarstellung).
 \begin{proof}
-Es werden die Differenzen betrachtet, wenn sich $a, b, c$ um einen Wert verändern:
-\begin{align*}
-a &= 1 \Rightarrow a = 2: \triangle 100100 \\
-b &= 0 \Rightarrow b = 1: \triangle 10010 \\
-c &= 0 \Rightarrow c = 1: \triangle 1001
-\end{align*}
-Es ist zu sehen $13 \mid 1001$, denn es gilt: $1001 = 13 \cdot 77$.
-Hieraus folgt: $13 \mid 10010, 13 \mid 100100$ und damit auch $13 \mid abcabc$. 
+  Es werden die Differenzen betrachtet, wenn sich $a, b, c$ um einen Wert verändern:
+  \begin{align*}
+    a & = 1 \Rightarrow a = 2: \triangle 100100 \\
+    b & = 0 \Rightarrow b = 1: \triangle 10010  \\
+    c & = 0 \Rightarrow c = 1: \triangle 1001
+  \end{align*}
+  Es ist zu sehen $13 \mid 1001$ \footnote{$1001 = 13 \cdot 77$}.
+  Hieraus folgt $13 \mid 10010, 13 \mid 100100$ und damit auch $13 \mid abcabc$.
 \end{proof}
 
+\newpage
 \subsection{Aufgabe 2}
-Sei $n$ eine natürliche Zahl, $n > 1$. Beweisen sie: Aus $n \mid (n - 1)! + 1$
-folgt $n \in \MP$.
+Sei $n$ eine natürliche Zahl, $n > 1$. Beweisen Sie: Aus $n \mid (n - 1)! + 1$
+folgt $n \in \SetP$.
 \begin{proof}
-Ist $n$ eine zusammengesetze Zahl $n = ab$ mit $a,b > 1$, dann gilt
-$a \mid (n - 1)!$ und dadurch $a \nmid (n - 1)! + 1$ weshalb ebenfalls
-$n \nmid (n - 1)! + 1$. \footnote{Für $n > 4$ gilt außerdem: $n | (n - 1)!$.
-Die gesamte Primzerlegung von $n$ ist in $(n - 1)!$ enthalten.} \\[4pt]
-TODO: Der restliche Beweis mit dem Satz von Wilson
+  Ist $n$ eine zusammengesetzte Zahl $n = ab$ mit $a,b > 1$, dann gilt
+  $a \mid (n - 1)!$ und dadurch $a \nmid (n - 1)! + 1$ weshalb ebenfalls
+  $n \nmid (n - 1)! + 1$. \\[4pt]
+  \emph{Der restliche Beweis mit dem Satz von Wilson}
 \end{proof}
 
+\newpage
 \subsection{Aufgabe 3}
 Sei $p_n$ die $n$-te Primzahl, d.\,h. $p_1 = 2$, $p_2 = 3$ usw. Zeigen Sie:
 $p_n \leq 2^{2^{n - 1}}$ für alle $n \geq 1$.
 \begin{proof}
-TODO
 \end{proof}
 
+\newpage
 \subsection{Aufgabe 4}
 Sei $p$ eine Primzahl. Beweisen Sie: $p$ ist ein Teiler von $\binom{p}{v}$
 für $1 \leq v \leq p - 1$.
 \begin{proof}
-Obwohl die Zahlen $\binom{n}{v}$ als Brüche definiert sind, gilt stets:
-\begin{equation*}
-\binom{n}{v} \in \MN \quad \text{für alle } n,v \in \MN.
-\end{equation*}
-Dies ist auf die Identität
-\begin{equation*}
-\binom{n - 1}{v - 1} + \binom{n - 1}{v} = \binom{n}{v}
-\end{equation*}
-zurückzuführen, mit der sich jeder Binomialkoeffizient rekursiv als
-die Summe natürlicher Zahlen berechnen lässt.
-Per Definition gilt:
-\begin{equation*}
-\binom{p}{v} := \frac{p(p-1) \cdot \ldots \cdot (p - v + 1)}{v!}
-\end{equation*}
-Die Primzerlegung des Nenners muss vollständig in der des Zählers vorhanden
-sein. Wegen $p > v$ ist $p$ jedoch niemals Teil dieser Zerlegung und
-kann im Zähler nicht gekürzt werden.
-Es folgt: $p \mid \binom{p}{v}$.
+  Obwohl die Zahlen $\binom{n}{v}$ als Brüche definiert sind, gilt stets:
+  \begin{equation*}
+    \binom{n}{v} \in \SetN{} \quad \text{für alle } n,v \in \SetN{}.
+  \end{equation*}
+  Dies ist auf die Identität
+  \begin{equation*}
+    \binom{n - 1}{v - 1} + \binom{n - 1}{v} = \binom{n}{v}
+  \end{equation*}
+  zurückzuführen, mit der sich jeder Binomialkoeffizient rekursiv als
+  die Summe natürlicher Zahlen berechnen lässt.
+  Per Definition gilt:
+  \begin{equation*}
+    \binom{p}{v} := \frac{p(p-1) \cdot \ldots \cdot (p - v + 1)}{v!}
+  \end{equation*}
+  Die Primzerlegung des Nenners muss vollständig in der des Zählers vorhanden
+  sein. Wegen $p > v$ ist $p$ jedoch niemals Teil dieser Zerlegung und
+  kann im Zähler nicht gekürzt werden.
+  Es folgt $p \mid \binom{p}{v}$.
 \end{proof}
 
+\newpage
 \subsection{Aufgabe 5}
-Seien $p \in \MP{}, n \in \MNx{}$ und $a,b \in \MZ{}$. Zeigen Sie durch Induktion
+Seien $p \in \SetP{}, n \in \SetNx{}$ und $a,b \in \SetZ{}$. Zeigen Sie durch Induktion
 nach $n$: $p$ ist ein Teiler von
 $((a + b)^{p^n} - (a^{p^n} + b^{p^n}))$.
 \begin{proof}
-  
 \end{proof}
 
+\newpage
 \subsection{Aufgabe 6}
 Sei $n \geq 2$ eine natürliche Zahl. Zeigen Sie: $n^4 + 4^n$ ist keine Primzahl.
 \begin{proof}
-  
 \end{proof}
