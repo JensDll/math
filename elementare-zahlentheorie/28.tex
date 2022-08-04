@@ -5,13 +5,14 @@ Seien $a,b,c$ Ziffern aus der Menge $\{0,1,2,\dotsc,9\}$ und $a \neq 0$.
 Zeigen Sie: 13 teilt die natürliche Zahl $abcabc$ (Zifferndarstellung).
 \begin{proof}
   Es werden die Differenzen betrachtet, wenn sich $a, b, c$ um einen Wert verändern:
-  \begin{align*}
-    a & = 1 \Rightarrow a = 2: \triangle 100100 \\
-    b & = 0 \Rightarrow b = 1: \triangle 10010  \\
-    c & = 0 \Rightarrow c = 1: \triangle 1001
-  \end{align*}
-  Es ist zu sehen $13 \mid 1001$ \footnote{$1001 = 13 \cdot 77$}.
-  Hieraus folgt $13 \mid 10010, 13 \mid 100100$ und damit auch $13 \mid abcabc$.
+  \begin{alignat*}{2}
+    a & = 1 \enspace\text{nach}\enspace a &  & = 2 : \triangle 100100            \\
+    b & = 0 \enspace\text{nach}\enspace b &  & = 1 : \triangle \hphantom{0}10010 \\
+    c & = 0 \enspace\text{nach}\enspace c &  & = 1 : \triangle \hphantom{00}1001
+  \end{alignat*}
+  Es ist zu sehen $13 \mid 1001$ mit $1001 = 13 \cdot 77$.
+  Hieraus folgt $13 \mid 10010, 13 \mid 100100$ und damit auch
+  $13 \mid 1001 \cdot v_1 + 10010 \cdot v_2 + 100100 \cdot v_3 = abcabc$, $v_{1,2,3} \in \{0,1,2,\dotsc,9\}$.
 \end{proof}
 
 \newpage
@@ -34,25 +35,21 @@ $p_n \leq 2^{2^{n - 1}}$ für alle $n \geq 1$.
 
 \newpage
 \subsection{Aufgabe 4}
+
 Sei $p$ eine Primzahl. Beweisen Sie: $p$ ist ein Teiler von $\binom{p}{v}$
 für $1 \leq v \leq p - 1$.
 \begin{proof}
-  Obwohl die Zahlen $\binom{n}{v}$ als Brüche definiert sind, gilt stets:
-  \begin{equation*}
-    \binom{n}{v} \in \SetN{} \quad \text{für alle } n,v \in \SetN{}.
-  \end{equation*}
-  Dies ist auf die Identität
-  \begin{equation*}
-    \binom{n - 1}{v - 1} + \binom{n - 1}{v} = \binom{n}{v}
-  \end{equation*}
-  zurückzuführen, mit der sich jeder Binomialkoeffizient rekursiv als
-  die Summe natürlicher Zahlen berechnen lässt.
   Per Definition gilt:
   \begin{equation*}
     \binom{p}{v} := \frac{p(p-1) \cdot \ldots \cdot (p - v + 1)}{v!}
   \end{equation*}
-  Die Primzerlegung des Nenners muss vollständig in der des Zählers vorhanden
-  sein. Wegen $p > v$ ist $p$ jedoch niemals Teil dieser Zerlegung und
+  Es gilt außerdem:
+  \begin{equation*}
+    \binom{n}{v} \in \SetN \quad \text{für alle} \enspace n,v \in \SetN
+  \end{equation*}
+  Die Primzerlegung des Nenners muss
+  vollständig in der des Zählers vorhanden sein.
+  Wegen $p > v$ ist $p$ jedoch niemals Teil dieser Zerlegung und
   kann im Zähler nicht gekürzt werden.
   Es folgt $p \mid \binom{p}{v}$.
 \end{proof}
