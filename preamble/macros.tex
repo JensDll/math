@@ -1,0 +1,20 @@
+\newcommand{\WholeNumbers}{\mathbb{N}}
+\newcommand{\NaturalNumbers}{\mathbb{N}^\times}
+\newcommand{\Integers}{\mathbb{Z}}
+\newcommand{\PrimeNumbers}{\mathbb{P}}
+
+\newcommand{\Vielfachfunktion}[1]{w_p(#1)}
+
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\makeatletter
+\newcommand*{\NoIndentAfterEnv}[1]{%
+  \AfterEndEnvironment{#1}{\par\@afterindentfalse\@afterheading}}
+\makeatother
+
+\makeatletter
+\newenvironment*{widemath}% Environment name
+{\addtolength{\jot}{0.25\baselineskip}}% Begin command
+{}% End command
+
+\NoIndentAfterEnv{widemath}

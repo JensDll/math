@@ -21,6 +21,11 @@
 \usepackage[style = authoryear-ibid]{biblatex}
 \addbibresource{preamble/main.bib}
 
+\usepackage{enumitem}
+\setlist{
+  itemsep=0pt
+}
+
 \usepackage{tikz}
 \usetikzlibrary{
   positioning,
@@ -36,7 +41,9 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 
-\input{preamble/commands.tex}
+\newtheorem{lemma}{Lemma}
+
+\input{preamble/macros.tex}
 
 \begin{document}
 \pagenumbering{Roman}
@@ -45,7 +52,7 @@
 \newpage
 \pagenumbering{arabic}
 
-\include{elementare-zahlentheorie/main.tex}
+\include{elementare-zahlentheorie/index.tex}
 
 \printbibliography[title = Literaturverzeichnis]
 \addcontentsline{toc}{part}{Literaturverzeichnis}

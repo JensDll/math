@@ -12,13 +12,14 @@ Zeigen Sie: 13 teilt die natürliche Zahl $abcabc$ (Zifferndarstellung).
   \end{alignat*}
   Es ist zu sehen $13 \mid 1001$ mit $1001 = 13 \cdot 77$.
   Hieraus folgt $13 \mid 10010, 13 \mid 100100$ und damit auch
-  $13 \mid 1001 \cdot v_1 + 10010 \cdot v_2 + 100100 \cdot v_3 = abcabc$, $v_{1,2,3} \in \{0,1,2,\dotsc,9\}$.
+  $13 \mid 1001 \cdot v_1 + 10010 \cdot v_2 + 100100 \cdot v_3 = abcabc$
+  mit $v_{1,2,3} \in \{0,1,2,\dotsc,9\}$.
 \end{proof}
 
 \newpage
 \subsection{Aufgabe 2}
 Sei $n$ eine natürliche Zahl, $n > 1$. Beweisen Sie: Aus $n \mid (n - 1)! + 1$
-folgt $n \in \SetP$.
+folgt $n \in \PrimeNumbers{}$.
 \begin{proof}
   Ist $n$ eine zusammengesetzte Zahl $n = ab$ mit $a,b > 1$, dann gilt
   $a \mid (n - 1)!$ und dadurch $a \nmid (n - 1)! + 1$ weshalb ebenfalls
@@ -35,17 +36,17 @@ $p_n \leq 2^{2^{n - 1}}$ für alle $n \geq 1$.
 
 \newpage
 \subsection{Aufgabe 4}
-
 Sei $p$ eine Primzahl. Beweisen Sie: $p$ ist ein Teiler von $\binom{p}{v}$
-für $1 \leq v \leq p - 1$.
+für $1 \leq v < p$.
 \begin{proof}
   Per Definition gilt:
   \begin{equation*}
-    \binom{p}{v} := \frac{p(p-1) \cdot \ldots \cdot (p - v + 1)}{v!}
+    \binom{p}{v} = \frac{p(p-1) \cdot \ldots \cdot (p - v + 1)}{v!}
   \end{equation*}
   Es gilt außerdem:
   \begin{equation*}
-    \binom{n}{v} \in \SetN \quad \text{für alle} \enspace n,v \in \SetN
+    \binom{n}{v} \in \WholeNumbers{} \quad
+    \text{für alle} \enspace n,v \in \WholeNumbers{}
   \end{equation*}
   Die Primzerlegung des Nenners muss
   vollständig in der des Zählers vorhanden sein.
@@ -53,13 +54,76 @@ für $1 \leq v \leq p - 1$.
   kann im Zähler nicht gekürzt werden.
   Es folgt $p \mid \binom{p}{v}$.
 \end{proof}
+\noindent
+Es kann nun eine verallgemeinerte Eigenschaft der eben beschriebenen
+Teilbarkeit beschrieben werden. Der Beweis des folgenden Lemmas wir
+in der nächsten Aufgabe hilfreich sein.
+\begin{lemma}
+  Sei $p$ eine Primzahl. Dann gilt
+  \begin{equation*}
+    p \mid \binom{p^n}{v} \quad \text{für alle} \enspace n \in \WholeNumbers{}
+    \enspace \text{und} \enspace 1 \leq v < p^n
+  \end{equation*}
+\end{lemma}
+\begin{proof}
+  Die folgende Identität ist korrekt:
+  \begin{widemath}
+    \begin{equation*}
+      \begin{aligned}
+        \binom{p^n}{v}  & = \frac{p^n}{v}\binom{p^n - 1}{v - 1} \\
+        v\binom{p^n}{v} & = p^n\binom{p^n - 1}{v - 1}
+      \end{aligned}
+    \end{equation*}
+  \end{widemath}
+  Es ist somit zu sehen, dass $p^n \mid v\binom{p^n}{v}$.
+  \begin{enumerate}
+    \item Sind $p$ und $v$ teilerfremd, gilt $p^n \mid \binom{p^n}{v}$ und es
+          bleibt nichts mehr zu zeigen
+    \item Anderenfalls ist $v = p^{n-a}q$ mit $a \in \WholeNumbers{}$ und $0 < a \leq n$
+          (bemerke $p$ und $q$ sind teilerfremd und $a > 0$ wegen $v < p^n$)
+  \end{enumerate}
+  \noindent
+  Es gilt daher
+  \begin{widemath}
+    \begin{align*}
+      p^{n-a}q\binom{p^n}{v} & = p^n\binom{p^n - 1}{v - 1} \\
+      q\binom{p^n}{v}        & = p^a\binom{p^n - 1}{v - 1}
+    \end{align*}
+  \end{widemath}
+  \noindent
+  und somit $p^a \mid \binom{p^n}{v}$.
+  Außerdem gilt $p \mid p^a$ und letztendlich $p \mid \binom{p^n}{v}$.
+\end{proof}
 
 \newpage
 \subsection{Aufgabe 5}
-Seien $p \in \SetP{}, n \in \SetNx{}$ und $a,b \in \SetZ{}$. Zeigen Sie durch Induktion
+Seien $p \in \PrimeNumbers{}$, $n \in \NaturalNumbers{}$ und $a,b \in \Integers{}$. Zeigen Sie durch Induktion
 nach $n$: $p$ ist ein Teiler von
 $((a + b)^{p^n} - (a^{p^n} + b^{p^n}))$.
 \begin{proof}
+  Es ist $B$ die Menge aller Zahlen $n \in \NaturalNumbers{}$,
+  sodass für alle $a,b \in \Integers{}$ die behauptete Teilbarkeit richtig ist.
+  Es ist $1 \in B$, denn es gilt nach dem Binomischen Lehrsatz
+  \parencite[19]{book:zahlentheorie}:
+  \begin{widemath}
+    \begin{equation*}
+      \begin{aligned}
+        (a + b)^p - (a^p + b^p) & =
+        \left[a^p + \binom{p}{1}a^{p-1}b + \dotsb + \binom{p}{p - 1}ab^{p-1} + b^p\right] - (a^p + b^p) \\
+                                & = \binom{p}{1}a^{p-1}b + \dotsb + \binom{p}{p - 1}ab^{p-1}
+      \end{aligned}
+    \end{equation*}
+  \end{widemath}
+  Jeder Summand ist als Produkt von $\binom{p}{1},\dotsc,\binom{p}{p - 1}$ durch $p$ teilbar.
+  Sei $n \in B$. Um $n + 1 \in B$ zu verifizieren, rechnen wir wie folgt:
+  \begin{equation*}
+    \begin{aligned}
+      (a + b)^{p^{n+1}} - (a^{p^{n+1}} + b^{p^{n+1}}) & =
+      \binom{p^{n+1}}{1}a^{p^{n+1}-1}b + \dotsb + \binom{p^{n+1}}{p^{n+1} - 1}ab^{p^{n+1}-1}
+    \end{aligned}
+  \end{equation*}
+  Wieder ist zu sehen, dass jeder Term als ein Vielfaches von
+  $\binom{p^{n+1}}{1},\dotsc,\binom{p^{n+1}}{p^{n+1} - 1}$ durch $p$ teilbar ist.
 \end{proof}
 
 \newpage

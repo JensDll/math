@@ -3,15 +3,15 @@
 \subsection{Aufgabe 3}
 Seien $a$ und $b$ positive natürliche Zahlen mit der Eigenschaft, dass
 es keine Primzahl gibt, die zugleich $a$ und $b$ teilt. Beweisen Sie:
-Gibt es ein $c \in \SetN{}$ mit $ab = c^2$, so
-existieren $x,y \in \SetN{}$ mit $a = x^2$ und $b = y^2$.
+Gibt es ein $c \in \WholeNumbers{}$ mit $ab = c^2$, so
+existieren $x,y \in \WholeNumbers{}$ mit $a = x^2$ und $b = y^2$.
 \begin{proof}
   Es ist $c$ eine beliebige zusammengesetzte Zahl und
   $c^2 = p_1^{2m_1}p_2^{2m_2} \cdot \ldots \cdot p_r^{2m_r}$
   ihre Primzerlegung. Man überlege jetzt,
   wie diese Faktoren zwischen $a$ und $b$ verteilt sein können.
   Damit keine Primzahl in $a$ oder $b$ gemeinsam vorkommt, müssen die
-  Primpotenzen $p_i^{2m_i};\,i = 1,\dotsc,r$ vollständig zwischen
+  Primpotenzen $p_i^{2m_i}$ mit $i = 1,\dotsc,r$ vollständig zwischen
   $a$ und $b$ verteilt sein. Somit sind es immer Quadratzahlen.
 \end{proof}
 \noindent
@@ -31,12 +31,14 @@ Zeigen sie: $a = b$.
 \begin{proof}
   Es sind
   \begin{align*}
-    a & = X_1^{m_1} \cdot X_2^{m_2} \cdot \ldots \cdot X_r^{m_r}                                             \\
-    b & = Y_1^{n_1} \cdot Y_2^{n_2} \cdot \ldots \cdot Y_r^{n_r} \qquad X_i,Y_i \in \SetP{};\,i = 1,\dotsc,r
+    a & = X_1^{m_1} \cdot X_2^{m_2} \cdot \ldots \cdot X_r^{m_r} \\
+    b & = Y_1^{n_1} \cdot Y_2^{n_2} \cdot \ldots \cdot Y_r^{n_r}
+    \qquad X_i,Y_i \in \PrimeNumbers{} \enspace \text{mit} \enspace i = 1,\dotsc,r
   \end{align*}
-  die Primzerlegungen von $a$ und $b$. Es ist direkt festzuhalten, dass $X_i = Y_i\,\forall\,i = 1,\dotsc,r$.
-  Hätte $a$ zu $b$ zusätzliche Primfaktoren, verletzt dies das Teilbarkeitskriterium in $a \mid b^2$.
-  Hätte $a$ zu $b$ abzügliche Primfaktoren, verletzt dies $b^2 \mid a^3$.
+  die Primzerlegungen von $a$ und $b$. Es ist direkt festzuhalten, dass $X_i = Y_i$ für alle
+  $i = 1,\dotsc,r$. Hätte $a$ mehr Primfaktoren wie $b$,
+  verletzt dies das Teilbarkeitskriterium \parencite[33]{book:zahlentheorie} in $a \mid b^2$;
+  hätte $a$ weniger, verletzt dies $b^2 \mid a^3$.
   Es bleibt zu zeigen, dass auch die Primpotenzen nicht verschieden sind.
   Angenommen $a \neq b$ und es werden zwei Fälle unterschieden:
 
@@ -50,7 +52,7 @@ Zeigen sie: $a = b$.
     X^{2m}                   & \mid X^{3m - 3s}               & X^{3m - 3s}               & = X^{2m} \cdot X^{m - 3s}                         \\
     X^{3m - 3s}              & \mid X^{4m}                    & X^{4m}                    & = X^{3m - 3s} \cdot X^{m + 3s}                    \\
     X^{4m}                   & \mid X^{5m - 5s}               & X^{5m - 5s}               & = X^{4m} \cdot X^{m - 5s}                         \\
-    \vdots                   &                                &                           & \vdots                                            \\
+                             & \vdotswithin{\mid}             &                           & \vdotswithin{=}                                   \\
     X^{(2k - 1)m - (2k -1)s} & \mid X^{2km}                   & X^{2km}                   & = X^{(2k - 1)m - (2k -1)s} \cdot X^{m + (2k -1)s} \\
     X^{2km}                  & \mid X^{(2k + 1)m - (2k + 1)s} & X^{(2k + 1)m - (2k + 1)s} & = X^{2km} \cdot X^{m - (2k + 1)s}
   \end{align*}

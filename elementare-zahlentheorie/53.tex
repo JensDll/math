@@ -2,26 +2,26 @@
 
 \subsection{Aufgabe 1}
 Sei $p$ eine Primzahl, $a,b$ seien von Null verschiedene rationale Zahlen,
-$a + b \neq 0$. Zeigen Sie: $\fvielfach{a + b} \geq \min{(\fvielfach{a}, \fvielfach{b})}$
+$a + b \neq 0$. Zeigen Sie: $\Vielfachfunktion{a + b} \geq \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})}$
 \begin{proof}
-  Sei $m = \min{(\fvielfach{a}, \fvielfach{b})}$. Es gilt $p^m \mid a$, $p^m \mid b$
+  Sei $m = \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})}$. Es gilt $p^m \mid a$, $p^m \mid b$
   und damit auch $p^m \mid a + b$. Wir schreiben $a + b = p^m \cdot v$
-  auf und zeigen durch umformen:
+  und zeigen durch umformen:
   \begin{align*}
-    \fvielfach{a + b} & = \fvielfach{p^m \cdot v}                              \\
-                      & = \fvielfach{p^m} + \fvielfach{v}                      \\
-                      & = m + \fvielfach{v}                                    \\
-                      & = \min{(\fvielfach{a}, \fvielfach{b})} + \fvielfach{v}
+    \Vielfachfunktion{a + b} & = \Vielfachfunktion{p^m \cdot v}                                            \\
+                             & = \Vielfachfunktion{p^m} + \Vielfachfunktion{v}                             \\
+                             & = m + \Vielfachfunktion{v}                                                  \\
+                             & = \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})} + \Vielfachfunktion{v}
   \end{align*}
-  Es ist zu sehen $\fvielfach{a + b} \geq \min{(\fvielfach{a}, \fvielfach{b})}$.
+  Es ist zu sehen $\Vielfachfunktion{a + b} \geq \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})}$.
 \end{proof}
 
 \newpage
 \subsection{Aufgabe 2}
 Für $x$ reell bezeichne $\floor{x}$ die größte ganze Zahl $m$ mit $m \leq x$.
-Zeigen Sie, dass für $p$ eine Primzahl und $n \in \SetN$ beliebig gilt:
+Zeigen Sie, dass für $p$ eine Primzahl und $n \in \WholeNumbers{}$ beliebig gilt:
 \begin{equation*}
-  \fvielfach{n!} = \sum_{i=0}^{\infty} \floor*{\frac{n}{p^i}}
+  \Vielfachfunktion{n!} = \sum_{i=0}^{\infty} \floor*{\frac{n}{p^i}}
 \end{equation*}
 \begin{proof}
   \begin{figure}
