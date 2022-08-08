@@ -12,8 +12,7 @@ Zeigen Sie: 13 teilt die natürliche Zahl $abcabc$ (Zifferndarstellung).
   \end{alignat*}
   Es ist zu sehen $13 \mid 1001$ mit $1001 = 13 \cdot 77$.
   Hieraus folgt $13 \mid 10010, 13 \mid 100100$ und damit auch
-  $13 \mid 1001 \cdot v_1 + 10010 \cdot v_2 + 100100 \cdot v_3 = abcabc$
-  mit $v_{1,2,3} \in \{0,1,2,\dotsc,9\}$.
+  $13 \mid 100100 \cdot a + 10010 \cdot b + 1001 \cdot a = abcabc$.
 \end{proof}
 
 \newpage
@@ -21,10 +20,41 @@ Zeigen Sie: 13 teilt die natürliche Zahl $abcabc$ (Zifferndarstellung).
 Sei $n$ eine natürliche Zahl, $n > 1$. Beweisen Sie: Aus $n \mid (n - 1)! + 1$
 folgt $n \in \PrimeNumbers{}$.
 \begin{proof}
-  Ist $n$ eine zusammengesetzte Zahl $n = ab$ mit $a,b > 1$, dann gilt
-  $a \mid (n - 1)!$ und dadurch $a \nmid (n - 1)! + 1$ weshalb ebenfalls
-  $n \nmid (n - 1)! + 1$. \\[4pt]
-  \emph{Der restliche Beweis mit dem Satz von Wilson}
+  \begin{lemma}
+    \label{lemma:n_neq4_composite}
+    Sei $n \in \WholeNumbers{}$ eine zusammengesetzte Zahl, $n \neq 4$. Dann gilt:
+    \begin{equation*}
+      n \mid (n - 1)!
+    \end{equation*}
+  \end{lemma}
+  \begin{proof}
+    Es ist $n = ab$ mit $a,b \geq 2$. Wir können $(n - 1)!$ wie folgt aufschreiben:
+    \begin{equation*}
+      n = \textcolor{Red}{a}\textcolor{Green}{b} \mid
+      1 \cdot 2 \dotsm \textcolor{Red}{a}
+      \textcolor{Green}{(a + 1)(a + 2) \dotsm (a + b)}
+      \dotsm (ab - 1) = (ab - 1)!
+    \end{equation*}
+    Das Produkt $\textcolor{Green}{b}$ aufeinanderfolgender Terme
+    enthält zwangsweise ein Vielfaches von $\textcolor{Green}{b}$.
+    Außerdem enthält $(ab - 1)!$ $\textcolor{Red}{a}$ und somit
+    $\textcolor{Red}{a}\textcolor{Green}{b} \mid (ab - 1)!$.\BigNewline
+    Die obige Schreibweise ist korrekt, denn wir haben
+    \begin{equation*}
+      \begin{aligned}
+             &  & a + b & \leq ab - 1                                     \\
+        \iff &  & 0     & \leq ab - a - b - 1                             \\
+        \iff &  & 2     & \leq \underbrace{(a - 1)}_{\geq 1}
+        \underbrace{\textcolor{Cyan}{(b - 1)}}_{\textcolor{Cyan}{\geq 2}} \\
+      \end{aligned}
+    \end{equation*}
+    mit $a,b \geq 2$ und niemals $a = b = 2$, da $n \neq 4$.
+    Also mindestens \textcolor{Cyan}{einer} der beiden $\textcolor{Cyan}{\geq 3}$.
+  \end{proof}
+  \noindent
+  \autoref{lemma:n_neq4_composite} zeigt, dass $n \mid (n - 1)!$ für alle $n$ zusammengesetzt.
+  Man kann also schließen, dass alle Zahlen mit der Eigenschaft $n \mid (n - 1)! + 1$
+  nicht zusammengesetzt und daher Prim sind.
 \end{proof}
 
 \newpage
@@ -59,6 +89,7 @@ Es kann nun eine verallgemeinerte Eigenschaft der eben beschriebenen
 Teilbarkeit beschrieben werden. Der Beweis des folgenden Lemmas wir
 in der nächsten Aufgabe hilfreich sein.
 \begin{lemma}
+  \label{lemma:p_divides_binom}
   Sei $p$ eine Primzahl. Dann gilt
   \begin{equation*}
     p \mid \binom{p^n}{v} \quad \text{für alle} \enspace n \in \WholeNumbers{}
@@ -114,7 +145,8 @@ $((a + b)^{p^n} - (a^{p^n} + b^{p^n}))$.
       \end{aligned}
     \end{equation*}
   \end{widemath}
-  Jeder Summand ist als Produkt von $\binom{p}{1},\dotsc,\binom{p}{p - 1}$ durch $p$ teilbar.
+  $p$ teilt die Summe, da jeder Summand ist als ein Vielfaches
+  von $\binom{p}{1},\dotsc,\binom{p}{p - 1}$ durch $p$ teilbar ist.
   Sei $n \in B$. Um $n + 1 \in B$ zu verifizieren, rechnen wir wie folgt:
   \begin{equation*}
     \begin{aligned}
@@ -122,12 +154,25 @@ $((a + b)^{p^n} - (a^{p^n} + b^{p^n}))$.
       \binom{p^{n+1}}{1}a^{p^{n+1}-1}b + \dotsb + \binom{p^{n+1}}{p^{n+1} - 1}ab^{p^{n+1}-1}
     \end{aligned}
   \end{equation*}
-  Wieder ist zu sehen, dass jeder Term als ein Vielfaches von
-  $\binom{p^{n+1}}{1},\dotsc,\binom{p^{n+1}}{p^{n+1} - 1}$ durch $p$ teilbar ist.
+  Nach \autoref{lemma:p_divides_binom} gilt die obige Eigenschaft auch in diesem Fall.
 \end{proof}
 
 \newpage
 \subsection{Aufgabe 6}
 Sei $n \geq 2$ eine natürliche Zahl. Zeigen Sie: $n^4 + 4^n$ ist keine Primzahl.
 \begin{proof}
+  Wir formen um:
+  \begin{equation*}
+    \begin{aligned}
+      n^4 + 4^n & = (n^2)^2 + (2^n)^2                                                \\
+                & = (n^2 + 2^n)^2 - (22^nn^2)                                        \\
+                & = (n^2 + 2^n)^2 - (2^{n+1}n^2)                                     \\
+                & = (n^2 + 2^n)^2 - (2^{\frac{n+1}{2}}n)^2
+      \qquad \text{bemerke} \enspace a^2 - b^2 = (a + b)(a - b)                      \\
+                & = (n^2 + 2^n + 2^{\frac{n+1}{2}}n)(n^2 + 2^n - 2^{\frac{n+1}{2}}n)
+    \end{aligned}
+  \end{equation*}
+  Es ist zu erkennen, dass für ungerade $n$ immer ein Faktor entsteht.
+  Für $n$ gerade, ist die Zahl offensichtlich keine Primzahl,
+  da $n^4 + 4^n > 2$ und $2 \mid n^4 + 4^n$.
 \end{proof}
