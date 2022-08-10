@@ -1,5 +1,24 @@
 \section{Seite 33}
 
+\subsection{Aufgabe 1}
+Folgern Sie aus der Eindeutigkeit der Primzerlegung das Fundamentallemma 1.4
+\parencite[26]{book:zahlentheorie}.
+\begin{proof}
+  Die Primzahl $p$ teilt das Produkt zweier Zahlen $a$ und $b$
+  \begin{equation*}
+    p \mid \underbrace{(X_1^{m_1} X_2^{m_2} \dotsm X_r^{m_r})}_a
+    \underbrace{(Y_1^{m_1} Y_2^{m_2} \dotsm Y_s^{m_s})}_b
+  \end{equation*}
+\end{proof}
+
+\subsection{Aufgabe 2}
+Führen Sie für die Menge $E \defined{} \{4k + 1 : k \in \WholeNumbers{}\}$ entsprechende
+Betrachtungen durch wie für die Menge $D$ aus der Bemerkung in Abschnitt 2.
+Zeigen Sie insbesondere, dass in $E$ die Zerlegung in in $E$
+unzerlegbare Elemente nicht eindeutig bis auf Reihenfolge ist.
+\begin{proof}
+\end{proof}
+
 \subsection{Aufgabe 3}
 Seien $a$ und $b$ positive natürliche Zahlen mit der Eigenschaft, dass
 es keine Primzahl gibt, die zugleich $a$ und $b$ teilt. Beweisen Sie:
@@ -23,19 +42,15 @@ Zum Beispiel:
                               & 3) \quad ab = (2^2)(3^25^27^2) = 2^2 \cdot 105^2
 \end{align*}
 
-\newpage
 \subsection{Aufgabe 4}
 Es seien $a, b$ natürliche Zahlen, für die gilt:
 $a \mid b^2, b^2 \mid a^3, a^3 \mid b^4, b^4 \mid a^5, \dots$.\\
 Zeigen sie: $a = b$.
 \begin{proof}
-  Es sind
-  \begin{align*}
-    a & = X_1^{m_1} \cdot X_2^{m_2} \cdot \ldots \cdot X_r^{m_r} \\
-    b & = Y_1^{n_1} \cdot Y_2^{n_2} \cdot \ldots \cdot Y_r^{n_r}
-    \qquad X_i,Y_i \in \PrimeNumbers{} \enspace \text{mit} \enspace i = 1,\dotsc,r
-  \end{align*}
-  die Primzerlegungen von $a$ und $b$. Es ist direkt festzuhalten, dass $X_i = Y_i$ für alle
+  Es sind $a = X_1^{m_1}X_2^{m_2} \dotsm X_r^{m_r}$ und
+  $b = Y_1^{n_1}Y_2^{n_2} \dotsm Y_s^{n_s}$ die Primzerlegungen von $a$ und $b$
+  mit Primzahlen $X_1,X_2,\dotsc,X_r$, $Y_1,Y_2,\dotsc,Y_s$.
+  Es ist direkt festzuhalten, dass $r = s$ und $X_i = Y_i$ für alle
   $i = 1,\dotsc,r$. Hätte $a$ mehr Primfaktoren wie $b$,
   verletzt dies das Teilbarkeitskriterium \parencite[33]{book:zahlentheorie} in $a \mid b^2$;
   hätte $a$ weniger, verletzt dies $b^2 \mid a^3$.

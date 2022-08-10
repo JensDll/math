@@ -1,38 +1,60 @@
 \section{Seite 53}
-
+Vielfachfunktion
 \subsection{Aufgabe 1}
 Sei $p$ eine Primzahl, $a,b$ seien von Null verschiedene rationale Zahlen,
-$a + b \neq 0$. Zeigen Sie: $\Vielfachfunktion{a + b} \geq \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})}$
+$a + b \neq 0$. Zeigen Sie: $\vielfachfunktion{a + b} \geq \min{(\vielfachfunktion{a}, \vielfachfunktion{b})}$
 \begin{proof}
-  Sei $m = \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})}$. Es gilt $p^m \mid a$, $p^m \mid b$
+  Sei $m = \min{(\vielfachfunktion{a}, \vielfachfunktion{b})}$. Es gilt $p^m \mid a$, $p^m \mid b$
   und damit auch $p^m \mid a + b$. Wir schreiben $a + b = p^m \cdot v$
   und zeigen durch umformen:
   \begin{align*}
-    \Vielfachfunktion{a + b} & = \Vielfachfunktion{p^m \cdot v}                                            \\
-                             & = \Vielfachfunktion{p^m} + \Vielfachfunktion{v}                             \\
-                             & = m + \Vielfachfunktion{v}                                                  \\
-                             & = \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})} + \Vielfachfunktion{v}
+    \vielfachfunktion{a + b} & = \vielfachfunktion{p^m \cdot v}                                            \\
+                             & = \vielfachfunktion{p^m} + \vielfachfunktion{v}                             \\
+                             & = m + \vielfachfunktion{v}                                                  \\
+                             & = \min{(\vielfachfunktion{a}, \vielfachfunktion{b})} + \vielfachfunktion{v}
   \end{align*}
-  Es ist zu sehen $\Vielfachfunktion{a + b} \geq \min{(\Vielfachfunktion{a}, \Vielfachfunktion{b})}$.
+  Es ist zu sehen $\vielfachfunktion{a + b} \geq \min{(\vielfachfunktion{a}, \vielfachfunktion{b})}$.
 \end{proof}
 
-\newpage
 \subsection{Aufgabe 2}
 Für $x$ reell bezeichne $\floor{x}$ die größte ganze Zahl $m$ mit $m \leq x$.
 Zeigen Sie, dass für $p$ eine Primzahl und $n \in \WholeNumbers{}$ beliebig gilt:
 \begin{equation*}
-  \Vielfachfunktion{n!} = \sum_{i=0}^{\infty} \floor*{\frac{n}{p^i}}
+  \vielfachfunktion{n!} = \sum_{i=0}^{\infty} \floor*{\frac{n}{p^i}}
 \end{equation*}
 \begin{proof}
-  \begin{figure}
-    \centering
-    \begin{tikzpicture}
-      \foreach \x in {1,...,30}
-      \foreach \y in {1,2,3}
-        {
-          \draw ($0.5*(\x,\y)$) rectangle +(0.5,0.5);
-          \node[font=\scriptsize] at ($0.5*(\x,\y)+(0.25,0.25)$) {\x};
-        }
-    \end{tikzpicture}
-  \end{figure}
+\end{proof}
+
+\subsection{Aufgabe 3}
+Seien $n \in \NaturalNumbers{}$, $a_1,\dotsc,a_n \in \Integers{}$.
+Die reelle Zahl $x$ erfülle $x^n + a_1x^{n-1} + \dotsb + a_{n - 1}x + a_n = 0$.
+Zeigen Sie: $x$ ist entweder irrational oder ganz.
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 4}
+Seien $q_1,\dotsc,q_s$ Primzahlen, $b \defined{} q_1 \cdot q_2 \dotsm q_s \in \WholeNumbers{}$
+sowie $m_1,\dotsc,m_k \in \NaturalNumbers{}$ derart, dass gilt:
+$\frac{1}{b} = \frac{1}{m_1} + \frac{1}{m_2} + \dotsb + \frac{1}{m_k}$.
+Zeigen Sie: Jede Zahl $q_i, 1 \leq i \leq s$, teilt wenigstens eine der Zahlen $m_1,\dotsc,m_k$.
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 5}
+Berechnen Sie die Fibonaccidarstellung des Bruches $\frac{21}{23}$.
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 6}
+Zeigen Sie: Es gibt keine ägyptische Bruchdarstellung
+$\frac{21}{23} = \frac{1}{n_1} + \frac{1}{n_2} + \dotsb + \frac{1}{n_k}$,
+$1 < n_1 < n_2 < \dotsb < n_k$, mit höchstens 3 Stammbrüchen
+(d.\,h. notwendig $k \geq 4$).
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 7}
+Beweisen Sie die angegebene Eindeutigkeitsaussage für die Fibonaccidarstellung
+\parencite[53]{book:zahlentheorie}.
+\begin{proof}
 \end{proof}

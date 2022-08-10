@@ -1,0 +1,78 @@
+\section{Seite 70}
+
+\subsection{Aufgabe 1}
+Seinen $a,m,n \in \NaturalNumbers{}$. Bestimmen Sie den größten gemeinsamen Teiler
+von $a^m - 1$ und $a^n - 1$.
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 2}
+Seien $a,b \in \NaturalNumbers{}$ teilerfremd und $c \in \WholeNumbers{}$ so,
+dass gilt: $a \mid c$ und $b \mid c$. Zeigen Sie: $(ab) \mid c$.
+\begin{proof}
+  Das Kriterium für paarweise Teilerfremdheit \parencite[50]{book:zahlentheorie}
+  enthält als triviale
+  \begin{folgerung}
+    \label{folgerung:70:1}
+    Seien $a,b \in \Integers{}$ zwei teilerfremde Zahlen, dann ist
+    $\min{(\vielfachfunktion{a}, \vielfachfunktion{b})} = 0$
+    für alle $p \in \PrimeNumbers{}$.
+  \end{folgerung}
+  \noindent
+  Es gilt $\vielfachfunktion{a} \leq \vielfachfunktion{c}$,
+  $\vielfachfunktion{b} \leq \vielfachfunktion{c}$ für alle $p \in \PrimeNumbers{}$
+  nach dem Teilbarkeitskriterium \parencite[50]{book:zahlentheorie}.
+  Es ist $ab = \sum_{p} p^{\vielfachfunktion{a} + \vielfachfunktion{b}}$
+  die Primzerlegung von $ab$. Da $a$ und $b$ teilerfremd sind, gilt nach
+  \autoref{folgerung:70:1} $\vielfachfunktion{a} + \vielfachfunktion{b}
+    \leq \vielfachfunktion{c}$. Es folgt $(ab) \mid c$.
+\end{proof}
+
+\subsection{Aufgabe 3}
+Seien $a,b \in \NaturalNumbers{}$. Zeigen Sie: $\ggt{a + b}{a - b} \geq \ggt{a}{b}$.
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 4}
+\label{70:4}
+Seien $a,b,m \in \Integers{}$. Zeigen Sie die Äquivalenz folgender Aussagen:
+\begin{enumerate}[label=\roman*)]
+  \item Es gibt eine ganze Zahl $x$ mit $m \mid (ax -b)$
+  \item $\ggt{a}{m} \mid b$
+\end{enumerate}
+
+\subsection{Aufgabe 5}
+Seien $m,n \in \Integers{}$ teilerfremd, $k \defined{} mn$ sowie
+$a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4}):
+\begin{enumerate}[label=\alph*)]
+  \item Es gibt eine ganze Zahl $u$ mit $m \mid (u - a)$ und $n \mid (u - b)$
+  \item Für eine ganze Zahl $x$ sind äquivalent:
+        \begin{enumerate}[label=\roman*)]
+          \item $m \mid (x - a)$ und $n \mid (x - b)$
+          \item $k \mid (x - a)$
+        \end{enumerate}
+\end{enumerate}
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 6}
+\begin{enumerate}[label=\alph*)]
+  \item Seien $a,b$ zwei Ideale in $\Integers{}$. Zeigen Sie:
+        $a \cap b$ ist wieder ein Ideal in $\Integers{}$.
+  \item Zeigen Sie: Für ganze Zahlen $a,b,v$ sind folgende Aussagen äquivalent:
+        \begin{enumerate}[label=\roman*)]
+          \item $v \geq 0$ und
+                $\IdealIntegers{v} = \IdealIntegers{a} \cap \IdealIntegers{b}$
+          \item $v = \kgv{a}{b}$
+        \end{enumerate}
+\end{enumerate}
+\begin{proof}
+\end{proof}
+
+\subsection{Aufgabe 7}
+Seien $a,b,c \in \NaturalNumbers{}$. Zeigen Sie: Es gilt $a^2 + b^2 = c^2$ genau dann,
+wenn es $s,u,v \in \NaturalNumbers{}$ mit $u > v$ gibt, sodass entweder
+$a = 2suv$, $b = s(u^2 - v^2)$, $c = s(u^2 + v^2)$ oder
+$a = s(u^2 + r^2)$, $b = 2suv$, $c = s(u^2 + v^2)$.
+\begin{proof}
+\end{proof}
