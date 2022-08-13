@@ -106,7 +106,7 @@ in der nächsten Aufgabe hilfreich sein.
   Es ist somit zu sehen, dass $p^n \mid v\binom{p^n}{v}$.
   \begin{enumerate}
     \item Sind $p$ und $v$ teilerfremd, gilt $p^n \mid \binom{p^n}{v}$ und es
-          bleibt nichts mehr zu zeigen
+          bleibt nichts mehr zu zeigen \parencite[64]{book:zahlentheorie}
     \item Anderenfalls ist $v = p^{n-a}q$ mit $a \in \WholeNumbers{}$ und $0 < a \leq n$
           (bemerke $p$ und $q$ sind teilerfremd und $a > 0$ wegen $v < p^n$)
   \end{enumerate}
@@ -130,13 +130,13 @@ $((a + b)^{p^n} - (a^{p^n} + b^{p^n}))$.
 \begin{proof}
   Es ist $B$ die Menge aller Zahlen $n \in \NaturalNumbers{}$,
   sodass für alle $a,b \in \Integers{}$ die behauptete Teilbarkeit richtig ist.
-  Es ist $1 \in B$, denn es gilt nach dem Binomischen Lehrsatz
-  \parencite[19]{book:zahlentheorie}:
+  Es ist $1 \in B$, denn es gilt:
   \begin{widemath}
     \begin{equation*}
       \begin{aligned}
         (a + b)^p - (a^p + b^p) & =
-        \left[a^p + \binom{p}{1}a^{p-1}b + \dotsb + \binom{p}{p - 1}ab^{p-1} + b^p\right] - (a^p + b^p) \\
+        \underbrace{\left[a^p + \binom{p}{1}a^{p-1}b + \dotsb +
+        \binom{p}{p - 1}ab^{p-1} + b^p\right]}_{\text{Binomischen Lehrsatz \parencite[19]{book:zahlentheorie}}} - (a^p + b^p) \\
                                 & = \binom{p}{1}a^{p-1}b + \dotsb + \binom{p}{p - 1}ab^{p-1}
       \end{aligned}
     \end{equation*}
@@ -169,5 +169,5 @@ Sei $n \geq 2$ eine natürliche Zahl. Zeigen Sie: $n^4 + 4^n$ ist keine Primzahl
   \end{equation*}
   Es ist zu erkennen, dass für ungerade $n$ immer ein Faktor entsteht.
   Für $n$ gerade, ist die Zahl offensichtlich keine Primzahl,
-  da $n^4 + 4^n > 2$ und $2 \mid n^4 + 4^n$.
+  da $2 \mid n^4 + 4^n \geq 32$.
 \end{proof}

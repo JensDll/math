@@ -37,9 +37,23 @@ Seien $a,b \in \NaturalNumbers{}$. Zeigen Sie: $\ggt{a + b}{a - b} \geq \ggt{a}{
 \label{70:4}
 Seien $a,b,m \in \Integers{}$. Zeigen Sie die Äquivalenz folgender Aussagen:
 \begin{enumerate}[label=\roman*)]
-  \item Es gibt eine ganze Zahl $x$ mit $m \mid (ax -b)$
+  \item Es gibt eine ganze Zahl $x$ mit $m \mid (ax - b)$
   \item $\ggt{a}{m} \mid b$
 \end{enumerate}
+\begin{proof}
+  \implication{1}{2}: Sei $t = \ggt{a}{m}$. Es gilt $t \mid a$, $t \mid m$ und
+  daher $t \mid ax - b$. Weiter gilt $t \mid -b$ und dies erledigt die Beweisrichtung.\\
+  \implication{2}{1}: $\ggt{a}{m}$ liefert die Gleichung $t = ra + sm$.
+  Aus $\ggt{a}{m} \mid b$ folgt:
+  \begin{equation*}
+    \begin{aligned}
+      b      & = tv = rva + svm                                              \\
+      svm    & = b - rva \qquad\quad \text{definiere} \enspace x \defined rv \\
+      (-sv)m & = ax - b
+    \end{aligned}
+  \end{equation*}
+  Es folgt $m \mid (ax - b)$.
+\end{proof}
 
 \subsection{Aufgabe 5}
 Seien $m,n \in \Integers{}$ teilerfremd, $k \defined{} mn$ sowie
@@ -49,10 +63,22 @@ $a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4})
   \item Für eine ganze Zahl $x$ sind äquivalent:
         \begin{enumerate}[label=\roman*)]
           \item $m \mid (x - a)$ und $n \mid (x - b)$
-          \item $k \mid (x - a)$
+          \item $k \mid (x - u)$
         \end{enumerate}
 \end{enumerate}
 \begin{proof}
+  \begin{enumerate}[label=\alph*)]
+    \item Es ist $pm = u - a$ und
+          $qn = u - b$ mit $p,q \in \Integers{}$.
+          D.\,h. $u$ ist die Lösung der Gleichung
+          $\textcolor{Red}{p}m - \textcolor{Green}{q}n = b - a$.
+          Nach Voraussetzung $m \coprime n$ existiert $rm + sn = 1$
+          mit $r,s \in \Integers{}$ und daher:
+          \begin{equation*}
+            \textcolor{Red}{(b - a)r}m + \textcolor{Green}{(b - a)s}n = b - a
+          \end{equation*}
+          Also $u = \textcolor{Red}{(b - a)r}m + a = \textcolor{Green}{(b - a)s}n + b$.
+  \end{enumerate}
 \end{proof}
 
 \subsection{Aufgabe 6}
@@ -67,6 +93,23 @@ $a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4})
         \end{enumerate}
 \end{enumerate}
 \begin{proof}
+  \begin{enumerate}[label=\alph*)]
+    \item Jedes Ideal in $\Integers{}$ enthält die Null.
+          Denn $0 \in (a_1,a_2,\dotsc,a_n)$, da $a_1 = a_2 = \dotsb
+            = a_n = 0a_1 + 0 a_2 + \dotsb + 0a_n$.
+          Jede Schnittmenge enthält somit die Null und ist damit mindestens ein Nullideal.
+    \item \iimplication{1}{2} Das Ideal $\Integers{}a \cap \Integers{}b$ enthält
+          alle Lösungen der Gleichung $pa = qb$ mit $p,q \in \Integers{}$:
+          \begin{equation*}
+            \Integers{}a \cap \Integers{}b = \{z \in \Integers{}: z = pa \wedge
+            pa = qb \enspace\forall\,p,q \in \Integers{}\}
+          \end{equation*}
+          Die Lösungsmenge von $pa = qb$ bei gegebenen $a$ und $b$ ist genau:
+          \begin{equation*}
+            \{z \in \Integers{}: z = n \cdot \kgv{a}{b} \enspace \text{mit} \enspace n \in \Integers{} \}
+          \end{equation*}
+          Daher $v = \kgv{a}{b}$ und $\IdealIntegers{v} = \IdealIntegers{a} \cap \IdealIntegers{b}$.
+  \end{enumerate}
 \end{proof}
 
 \subsection{Aufgabe 7}

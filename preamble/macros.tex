@@ -6,22 +6,26 @@
 \newcommand*{\IdealIntegers}[1]{\Integers{}#1}
 
 \newcommand*{\vielfachfunktion}[1]{w_p(#1)}
-\newcommand*{\ggt}[2]{ggT(#1,\,#2)}
-\newcommand*{\kgv}[2]{kgV(#1,\,#2)}
+\newcommand*{\ggt}[2]{\text{ggT}(#1,\,#2)}
+\newcommand*{\kgv}[2]{\text{kgV}(#1,\,#2)}
 \newcommand*{\defined}{:=}
-
+\newcommand*{\implication}[2]{\asroman{#1}) $\Rightarrow$ \asroman{#2})}
+\newcommand*{\iimplication}[2]{\asroman{#1}) $\Leftrightarrow$ \asroman{#2})}
+\newcommand*{\coprime}{\perp}
 \newcommand*{\BigNewline}{\\[0.35\baselineskip]}
 
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 
 \makeatletter
+\newcommand*{\asroman}[1]{\romannumeral #1}
+\newcommand*{\Asroman}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
 \newcommand*{\NoIndentAfterEnv}[1]{%
   \AfterEndEnvironment{#1}{\par\@afterindentfalse\@afterheading}}
-\makeatother
 
-\makeatletter
 \newenvironment*{widemath}% Environment name
 {\addtolength{\jot}{0.25\baselineskip}}% Begin command
 {}% End command
+\makeatother
 
 \NoIndentAfterEnv{widemath}
