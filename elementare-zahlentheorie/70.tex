@@ -43,8 +43,8 @@ Seien $a,b,m \in \Integers{}$. Zeigen Sie die Äquivalenz folgender Aussagen:
 \begin{proof}
   \implication{1}{2}: Sei $t = \ggt{a}{m}$. Es gilt $t \mid a$, $t \mid m$ und
   daher $t \mid ax - b$. Weiter gilt $t \mid -b$ und dies erledigt die Beweisrichtung.\\
-  \implication{2}{1}: $\ggt{a}{m}$ liefert die Gleichung $t = ra + sm$.
-  Aus $\ggt{a}{m} \mid b$ folgt:
+  \implication{2}{1}: $\ggt{a}{m}$ liefert die Gleichung $t = ra + sm$
+  mit $r,s \in \Integers{}$. Aus $\ggt{a}{m} \mid b$ folgt mit $v \in \Integers{}$:
   \begin{equation*}
     \begin{aligned}
       b      & = tv = rva + svm                                              \\
@@ -52,7 +52,7 @@ Seien $a,b,m \in \Integers{}$. Zeigen Sie die Äquivalenz folgender Aussagen:
       (-sv)m & = ax - b
     \end{aligned}
   \end{equation*}
-  Es folgt $m \mid (ax - b)$.
+  Daher $m \mid (ax - b)$.
 \end{proof}
 
 \subsection{Aufgabe 5}
@@ -68,16 +68,35 @@ $a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4})
 \end{enumerate}
 \begin{proof}
   \begin{enumerate}[label=\alph*)]
-    \item Es ist $pm = u - a$ und
-          $qn = u - b$ mit $p,q \in \Integers{}$.
+    \item Es ist $\textcolor{Red}{p}m = u - a$ und
+          $\textcolor{Green}{q}n = u - b$ mit $p,q \in \Integers{}$.
           D.\,h. $u$ ist die Lösung der Gleichung
           $\textcolor{Red}{p}m - \textcolor{Green}{q}n = b - a$.
           Nach Voraussetzung $m \coprime n$ existiert $rm + sn = 1$
-          mit $r,s \in \Integers{}$ und daher:
+          mit $r,s \in \Integers{}$.
+          Bemerke die Terme $rm$ und $sn$ haben zwangsweise unterschiedliche Vorzeichen.
+          Daher:
+          \begin{equation}
+            \label{70:1}
+            \textcolor{Red}{(br - ar)}m + \textcolor{Green}{(bs - as)}n = b - a
+          \end{equation}
+          Also es existiert ein $u$ mit der Lösung:
           \begin{equation*}
-            \textcolor{Red}{(b - a)r}m + \textcolor{Green}{(b - a)s}n = b - a
+            u = \textcolor{Red}{(br - ar)}m + a = \textcolor{Green}{(bs - as)}n + b
           \end{equation*}
-          Also $u = \textcolor{Red}{(b - a)r}m + a = \textcolor{Green}{(b - a)s}n + b$.
+    \item \iimplication{1}{2} \autoref{70:1} gibt eine Lösung für $u$.
+          Es ist leicht hierdurch alle anderen Lösungen anzugeben.
+          Mit dem Wissen des Vorzeichenverhaltens von \eqref{70:1},
+          rechne man mit $v \in \Integers{}$ wie folgt:
+          \begin{equation*}
+            \textcolor{Red}{(br - ar + vn)}m + \textcolor{Green}{(bs - as + vm)}n
+            = b - a + (vmn - vmn)
+          \end{equation*}
+          Sind also $x = \textcolor{Red}{(br - ar + v_1n)}m + a$ und
+          $u = \textcolor{Red}{(br - ar + v_2n)}m + a$ mit $v_1 \neq v_2 \in \Integers{}$
+          zwei Lösungen der Teilbarkeit,
+          dann ist $x - u = v_1mn - v_2mn = (v_1 - v_2)mn$.
+          Mit $k \defined mn$ gilt also $k \mid x - u$.
   \end{enumerate}
 \end{proof}
 
@@ -97,18 +116,25 @@ $a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4})
     \item Jedes Ideal in $\Integers{}$ enthält die Null.
           Denn $0 \in (a_1,a_2,\dotsc,a_n)$, da $a_1 = a_2 = \dotsb
             = a_n = 0a_1 + 0 a_2 + \dotsb + 0a_n$.
-          Jede Schnittmenge enthält somit die Null und ist damit mindestens ein Nullideal.
-    \item \iimplication{1}{2} Das Ideal $\Integers{}a \cap \Integers{}b$ enthält
+          Jede Schnittmenge enthält somit ebenfalls die Null
+          und ist also mindestens ein Nullideal.
+    \item \iimplication{1}{2} Die Schnittmenge $\Integers{}a \cap \Integers{}b$ enthält
           alle Lösungen der Gleichung $pa = qb$ mit $p,q \in \Integers{}$:
           \begin{equation*}
-            \Integers{}a \cap \Integers{}b = \{z \in \Integers{}: z = pa \wedge
-            pa = qb \enspace\forall\,p,q \in \Integers{}\}
+            \Integers{}a \cap \Integers{}b = \{z \in \Integers{}: z = pa \enspace
+            \text{und} \enspace pa = qb \enspace
+            \text{für alle} \enspace p,q \in \Integers{}\}
           \end{equation*}
-          Die Lösungsmenge von $pa = qb$ bei gegebenen $a$ und $b$ ist genau:
+          Die kleinste positive Lösung $pa = qb > 0$ bei gegebenen $a,b$ ist offensichtlich
+          $\kgv{a}{b}$. Alle weiteren Lösungen sind Vielfache dieser Lösung
+          und es entsteht die Lösungsmenge:
           \begin{equation*}
-            \{z \in \Integers{}: z = n \cdot \kgv{a}{b} \enspace \text{mit} \enspace n \in \Integers{} \}
+            \{z \in \Integers{}: z = n \cdot \kgv{a}{b}
+            \enspace \text{mit} \enspace n \in \Integers{} \}
           \end{equation*}
-          Daher $v = \kgv{a}{b}$ und $\IdealIntegers{v} = \IdealIntegers{a} \cap \IdealIntegers{b}$.
+          Dies entspricht der Definition von $\Integers{}\kgv{a}{b}$.
+          Daher sind äquivalent
+          $v = \kgv{a}{b}$ und $\IdealIntegers{v} = \IdealIntegers{a} \cap \IdealIntegers{b}$.
   \end{enumerate}
 \end{proof}
 

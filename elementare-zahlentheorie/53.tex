@@ -38,6 +38,16 @@ sowie $m_1,\dotsc,m_k \in \NaturalNumbers{}$ derart, dass gilt:
 $\frac{1}{b} = \frac{1}{m_1} + \frac{1}{m_2} + \dotsb + \frac{1}{m_k}$.
 Zeigen Sie: Jede Zahl $q_i, 1 \leq i \leq s$, teilt wenigstens eine der Zahlen $m_1,\dotsc,m_k$.
 \begin{proof}
+  Durch Hauptnennerdarstellung entsteht mit $v \defined \frac{m_1 \dotsm m_r}{m_1} +
+    \frac{m_1 \dotsm m_r}{m_2} + \dotsb + \frac{m_1 \dotsm m_r}{m_r}$
+  die folgende Gleichung:
+  \begin{equation*}
+    \begin{aligned}
+           &  & \frac{1}{b} & = \frac{v}{m_1m_2 \dotsm m_k} \\
+      \iff &  & bv          & = m_1m_2 \dotsm m_k
+    \end{aligned}
+  \end{equation*}
+  Es ist zu sehen $b \mid m_1m_2 \dotsm m_k$ und damit die zu zeigende Aussage.
 \end{proof}
 
 \subsection{Aufgabe 5}
