@@ -1,4 +1,4 @@
-\section{Seite 33}
+\section{(33) Der Hauptsatz der elementaren Zahlentheorie}
 
 \subsection{Aufgabe 1}
 Folgern Sie aus der Eindeutigkeit der Primzerlegung das Fundamentallemma 1.4
@@ -6,13 +6,13 @@ Folgern Sie aus der Eindeutigkeit der Primzerlegung das Fundamentallemma 1.4
 \begin{proof}
   Die Primzahl $p$ teilt das Produkt zweier Zahlen $a$ und $b$
   \begin{equation*}
-    p \mid \underbrace{(X_1^{m_1} X_2^{m_2} \dotsm X_r^{m_r})}_a
-    \underbrace{(Y_1^{m_1} Y_2^{m_2} \dotsm Y_s^{m_s})}_b
+    p \mid (X_1^{m_1} X_2^{m_2} \dotsm X_r^{m_r})
+    (Y_1^{m_1} Y_2^{m_2} \dotsm Y_s^{m_s})
   \end{equation*}
 \end{proof}
 
 \subsection{Aufgabe 2}
-Führen Sie für die Menge $E \defined{} \{4k + 1 : k \in \WholeNumbers{}\}$ entsprechende
+Führen Sie für die Menge $E \defined \{4k + 1 : k \in \swhole\}$ entsprechende
 Betrachtungen durch wie für die Menge $D$ aus der Bemerkung in Abschnitt 2.
 Zeigen Sie insbesondere, dass in $E$ die Zerlegung in in $E$
 unzerlegbare Elemente nicht eindeutig bis auf Reihenfolge ist.
@@ -22,15 +22,16 @@ unzerlegbare Elemente nicht eindeutig bis auf Reihenfolge ist.
 \subsection{Aufgabe 3}
 Seien $a$ und $b$ positive natürliche Zahlen mit der Eigenschaft, dass
 es keine Primzahl gibt, die zugleich $a$ und $b$ teilt. Beweisen Sie:
-Gibt es ein $c \in \WholeNumbers{}$ mit $ab = c^2$, so
-existieren $x,y \in \WholeNumbers{}$ mit $a = x^2$ und $b = y^2$.
+Gibt es ein $c \in \swhole$ mit $ab = c^2$, so
+existieren $x,y \in \swhole$ mit $a = x^2$ und $b = y^2$.
 \begin{proof}
   Es ist $c$ eine beliebige zusammengesetzte Zahl und
-  $c^2 = p_1^{2m_1}p_2^{2m_2} \cdot \ldots \cdot p_r^{2m_r}$
+  $c^2 = p_1^{2m_1}p_2^{2m_2} \dotsm p_r^{2m_r}$
+  mit $p_1,\dotsc,p_r \in \sprime$ und $m_1,\dotsc,m_r \in \snatural$
   ihre Primzerlegung. Man überlege jetzt,
   wie diese Faktoren zwischen $a$ und $b$ verteilt sein können.
   Damit keine Primzahl in $a$ oder $b$ gemeinsam vorkommt, müssen die
-  Primpotenzen $p_i^{2m_i}$ mit $i = 1,\dotsc,r$ vollständig zwischen
+  Primpotenzen $2m_1,\dotsc,2m_r$ vollständig zwischen
   $a$ und $b$ verteilt sein. Somit sind es immer Quadratzahlen.
 \end{proof}
 \noindent
@@ -46,9 +47,11 @@ Es seien $a, b$ natürliche Zahlen, für die gilt:
 $a \mid b^2, b^2 \mid a^3, a^3 \mid b^4, b^4 \mid a^5, \dots$.\\
 Zeigen sie: $a = b$.
 \begin{proof}
-  Es sind $a = X_1^{m_1}X_2^{m_2} \dotsm X_r^{m_r}$ und
-  $b = Y_1^{n_1}Y_2^{n_2} \dotsm Y_s^{n_s}$ die Primzerlegungen von $a$ und $b$
-  mit Primzahlen $X_1,X_2,\dotsc,X_r$, $Y_1,Y_2,\dotsc,Y_s$.
+  Es sind $a = X_1^{m_1}X_2^{m_2} \dotsm X_r^{m_r},\,
+    b = Y_1^{n_1}Y_2^{n_2} \dotsm Y_s^{n_s}$
+  mit $X_1,\dotsc,X_r,Y_1,\dotsc,Y_r, \in \sprime$ und
+  $m_1,\dotsc,m_r,n_1,\dotsc,n_r, \in \snatural$
+  die Primzerlegungen von $a$ und $b$.
   Es ist direkt festzuhalten, dass $r = s$ und $X_i = Y_i$ für alle
   $i = 1,\dotsc,r$. Hätte $a$ mehr Primfaktoren wie $b$,
   verletzt dies das Teilbarkeitskriterium \parencite[33]{book:zahlentheorie} in $a \mid b^2$;
@@ -114,6 +117,6 @@ Zeigen sie: $a = b$.
   \end{align}
   Es ist zu sehen, dass Ungleichung \ref{eq:33.4.4} für alle $k,m,s$ wahr ist. In \ref{eq:33.4.3}
   wird $k = m + 1$ gewählt und man führt die ursprüngliche Behauptung
-  mit $(1 - 2s)m - s \geq 0$ zum Widerspruch.\BigNewline
+  mit $(1 - 2s)m - s \geq 0$ zum Widerspruch.\bignewline
   Es folgt $a = b$.
 \end{proof}

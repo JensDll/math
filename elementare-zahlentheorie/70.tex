@@ -1,54 +1,60 @@
-\section{Seite 70}
+\section{(70) Größter gemeinsamer Teiler}
 
 \subsection{Aufgabe 1}
-Seinen $a,m,n \in \NaturalNumbers{}$. Bestimmen Sie den größten gemeinsamen Teiler
+Seinen $a,m,n \in \snatural$. Bestimmen Sie den größten gemeinsamen Teiler
 von $a^m - 1$ und $a^n - 1$.
 \begin{proof}
 \end{proof}
 
 \subsection{Aufgabe 2}
-Seien $a,b \in \NaturalNumbers{}$ teilerfremd und $c \in \WholeNumbers{}$ so,
-dass gilt: $a \mid c$ und $b \mid c$. Zeigen Sie: $(ab) \mid c$.
+Seien $a,b \in \snatural$ teilerfremd und $c \in \swhole$ so,
+dass gilt: $a \mid c$ und $b \mid c$. Zeigen Sie: $ab \mid c$.
 \begin{proof}
   Das Kriterium für paarweise Teilerfremdheit \parencite[50]{book:zahlentheorie}
-  enthält als triviale
+  enthält als einfache
   \begin{folgerung}
     \label{folgerung:70:1}
-    Seien $a,b \in \Integers{}$ zwei teilerfremde Zahlen, dann ist
+    Seien $a,b \in \sintegers$ zwei teilerfremde Zahlen, dann ist
     $\min{(\vielfachfunktion{a}, \vielfachfunktion{b})} = 0$
-    für alle $p \in \PrimeNumbers{}$.
+    für alle $p \in \sprime$.
   \end{folgerung}
+  \begin{proof}
+    Wäre die Vielfachheitsfunktions mit $p$ für beide $a,b > 0$.
+    Dann ist genau dieses $p$ ein gemeinsamer Teiler von $a$ und $b$.
+  \end{proof}
   \noindent
   Es gilt $\vielfachfunktion{a} \leq \vielfachfunktion{c}$,
-  $\vielfachfunktion{b} \leq \vielfachfunktion{c}$ für alle $p \in \PrimeNumbers{}$
+  $\vielfachfunktion{b} \leq \vielfachfunktion{c}$ für alle $p \in \sprime$
   nach dem Teilbarkeitskriterium \parencite[50]{book:zahlentheorie}.
   Es ist $ab = \sum_{p} p^{\vielfachfunktion{a} + \vielfachfunktion{b}}$
-  die Primzerlegung von $ab$. Da $a$ und $b$ teilerfremd sind, gilt nach
+  mit $p \in \sprime$ die Primzerlegung von $ab$.
+  Da $a$ und $b$ teilerfremd sind, gilt nach
   \autoref{folgerung:70:1} $\vielfachfunktion{a} + \vielfachfunktion{b}
-    \leq \vielfachfunktion{c}$. Es folgt $(ab) \mid c$.
+    \leq \vielfachfunktion{c}$. Es folgt $ab \mid c$.
 \end{proof}
 
 \subsection{Aufgabe 3}
-Seien $a,b \in \NaturalNumbers{}$. Zeigen Sie: $\ggt{a + b}{a - b} \geq \ggt{a}{b}$.
+Seien $a,b \in \snatural$. Zeigen Sie: $\ggt{a + b}{a - b} \geq \ggt{a}{b}$.
 \begin{proof}
 \end{proof}
 
 \subsection{Aufgabe 4}
 \label{70:4}
-Seien $a,b,m \in \Integers{}$. Zeigen Sie die Äquivalenz folgender Aussagen:
+Seien $a,b,m \in \sintegers$. Zeigen Sie die Äquivalenz folgender Aussagen:
 \begin{enumerate}[label=\roman*)]
   \item Es gibt eine ganze Zahl $x$ mit $m \mid (ax - b)$
   \item $\ggt{a}{m} \mid b$
 \end{enumerate}
 \begin{proof}
   \implication{1}{2}: Sei $t = \ggt{a}{m}$. Es gilt $t \mid a$, $t \mid m$ und
-  daher $t \mid ax - b$. Weiter gilt $t \mid -b$ und dies erledigt die Beweisrichtung.\\
+  aus letzterem $t \mid ax - b$. Weiter gilt nach den Rechenregeln zur Teilbarkeit
+  $t \mid b$ und dies erledigt die Beweisrichtung.\\
   \implication{2}{1}: $\ggt{a}{m}$ liefert die Gleichung $t = ra + sm$
-  mit $r,s \in \Integers{}$. Aus $\ggt{a}{m} \mid b$ folgt mit $v \in \Integers{}$:
+  mit $r,s \in \sintegers$. Aus $\ggt{a}{m} \mid b$ folgt mit $v \in \sintegers$:
   \begin{equation*}
     \begin{aligned}
-      b      & = tv = rva + svm                                              \\
-      svm    & = b - rva \qquad\quad \text{definiere} \enspace x \defined rv \\
+      b      & = tv = rva + svm               \\
+      svm    & = b - rva \qquad x \defined rv \\
       (-sv)m & = ax - b
     \end{aligned}
   \end{equation*}
@@ -56,8 +62,8 @@ Seien $a,b,m \in \Integers{}$. Zeigen Sie die Äquivalenz folgender Aussagen:
 \end{proof}
 
 \subsection{Aufgabe 5}
-Seien $m,n \in \Integers{}$ teilerfremd, $k \defined{} mn$ sowie
-$a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4}):
+Seien $m,n \in \sintegers$ teilerfremd, $k \defined mn$ sowie
+$a,b \in \sintegers$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4}):
 \begin{enumerate}[label=\alph*)]
   \item Es gibt eine ganze Zahl $u$ mit $m \mid (u - a)$ und $n \mid (u - b)$
   \item Für eine ganze Zahl $x$ sind äquivalent:
@@ -69,31 +75,31 @@ $a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4})
 \begin{proof}
   \begin{enumerate}[label=\alph*)]
     \item Es ist $\textcolor{Red}{p}m = u - a$ und
-          $\textcolor{Green}{q}n = u - b$ mit $p,q \in \Integers{}$.
+          $\textcolor{Green}{q}n = u - b$ mit $p,q \in \sintegers$.
           D.\,h. $u$ ist die Lösung der Gleichung
           $\textcolor{Red}{p}m - \textcolor{Green}{q}n = b - a$.
-          Nach Voraussetzung $m \coprime n$ existiert $rm + sn = 1$
-          mit $r,s \in \Integers{}$.
-          Bemerke die Terme $rm$ und $sn$ haben zwangsweise unterschiedliche Vorzeichen.
-          Daher:
+          Nach Voraussetzung existiert $rm + sn = 1$ mit $r,s \in \sintegers$.
+          Bemerke die Terme $rm$ und $sn$ haben zwangsweise
+          unterschiedliche Vorzeichen. Nach Multiplikation mit
+          $b - a$ entsteht daher
           \begin{equation}
             \label{70:1}
-            \textcolor{Red}{(br - ar)}m + \textcolor{Green}{(bs - as)}n = b - a
+            \textcolor{Red}{(br - ar)}m + \textcolor{Green}{(bs - as)}n = b - a.
           \end{equation}
-          Also es existiert ein $u$ mit der Lösung:
+          Also, es existiert ein $u$ mit
           \begin{equation*}
-            u = \textcolor{Red}{(br - ar)}m + a = \textcolor{Green}{(bs - as)}n + b
+            u = \textcolor{Red}{(br - ar)}m + a = \textcolor{Green}{(bs - as)}n + b.
           \end{equation*}
-    \item \iimplication{1}{2} \autoref{70:1} gibt eine Lösung für $u$.
+    \item \autoref{70:1} gibt eine Lösung für $u$.
           Es ist leicht hierdurch alle anderen Lösungen anzugeben.
           Mit dem Wissen des Vorzeichenverhaltens von \eqref{70:1},
-          rechne man mit $v \in \Integers{}$ wie folgt:
+          rechne man mit $v \in \sintegers$ wie folgt:
           \begin{equation*}
             \textcolor{Red}{(br - ar + vn)}m + \textcolor{Green}{(bs - as + vm)}n
             = b - a + (vmn - vmn)
           \end{equation*}
           Sind also $x = \textcolor{Red}{(br - ar + v_1n)}m + a$ und
-          $u = \textcolor{Red}{(br - ar + v_2n)}m + a$ mit $v_1 \neq v_2 \in \Integers{}$
+          $u = \textcolor{Red}{(br - ar + v_2n)}m + a$ mit $v_1 \neq v_2 \in \sintegers$
           zwei Lösungen der Teilbarkeit,
           dann ist $x - u = v_1mn - v_2mn = (v_1 - v_2)mn$.
           Mit $k \defined mn$ gilt also $k \mid x - u$.
@@ -102,45 +108,76 @@ $a,b \in \Integers{}$ beliebig. Zeigen Sie (unter Verwendung von \autoref{70:4})
 
 \subsection{Aufgabe 6}
 \begin{enumerate}[label=\alph*)]
-  \item Seien $a,b$ zwei Ideale in $\Integers{}$. Zeigen Sie:
-        $a \cap b$ ist wieder ein Ideal in $\Integers{}$.
+  \item Seien $\mathfrak{a},\mathfrak{b}$ zwei Ideale in $\sintegers$. Zeigen Sie:
+        $\mathfrak{a} \cap \mathfrak{b}$ ist wieder ein Ideal in $\sintegers$.
   \item Zeigen Sie: Für ganze Zahlen $a,b,v$ sind folgende Aussagen äquivalent:
         \begin{enumerate}[label=\roman*)]
           \item $v \geq 0$ und
-                $\IdealIntegers{v} = \IdealIntegers{a} \cap \IdealIntegers{b}$
+                $\idealintergers{v} = \idealintergers{a} \cap \idealintergers{b}$
           \item $v = \kgv{a}{b}$
         \end{enumerate}
 \end{enumerate}
+
+\begin{lemma}
+  \label{lemma:70.6.1}
+  Es seien $a,b \in \sintegers$ zwei Zahlen derart, dass für das von ihnen
+  erzeugte Hauptideal $\idealintergers{a}, \idealintergers{b}$ gilt:
+  $\idealintergers{a} \subseteq \idealintergers{b}$.
+  Dann ist notwendigerweise $b \mid a$.
+\end{lemma}
+\begin{proof}
+  Es wird \obda{} angenommen $a,b \geq 0$.
+  Der Fall für $b = a$ und $a = 0$ ist klar. Ist $b = 0$, so muss $a$
+  als einzige Teilmenge ebenfalls $0$ sein. Es kann niemals gelten $b > a$, denn
+  dann wäre $a \notin \idealintergers{b}$. Es muss also sein $b < a$.
+  Es ist $a \in \idealintergers{b}$ und
+  es gilt somit die Gleichung $bx = a$ mit $x \in \sintegers$.
+  Es folgt $b \mid a$.
+\end{proof}
 \begin{proof}
   \begin{enumerate}[label=\alph*)]
-    \item Jedes Ideal in $\Integers{}$ enthält die Null.
-          Denn $0 \in (a_1,a_2,\dotsc,a_n)$, da $a_1 = a_2 = \dotsb
-            = a_n = 0a_1 + 0 a_2 + \dotsb + 0a_n$.
-          Jede Schnittmenge enthält somit ebenfalls die Null
-          und ist also mindestens ein Nullideal.
-    \item \iimplication{1}{2} Die Schnittmenge $\Integers{}a \cap \Integers{}b$ enthält
-          alle Lösungen der Gleichung $pa = qb$ mit $p,q \in \Integers{}$:
+    \item Wir zeigen, dass $\mathfrak{a} \cap \mathfrak{b}$ die Bedingungen
+          der Definition eines Ideals in $\sintegers$ erfüllt
+          \parencite[60]{book:zahlentheorie}.\\
+          \ad{1} Angenommen $a,b \in \mathfrak{a} \cap \mathfrak{b}$.
+          Es wird gezeigt, dass auch $a - b \in \mathfrak{a} \cap \mathfrak{b}$.
+          Per Annahme wissen wir $a,b \in \mathfrak{a}$ und $a,b \in \mathfrak{b}$.
+          Nach Idealdefinition ist somit ebenfalls
+          $a - b \in \mathfrak{a}$ und $a - b \in \mathfrak{b}$.
+          Es folgt $a - b \in \mathfrak{a} \cap \mathfrak{b}$.\\
+          \ad{2} Angenommen $a \in \mathfrak{a} \cap \mathfrak{b}$.
+          Es wird gezeigt, dass auch $xa \in \mathfrak{a} \cap \mathfrak{b}$
+          mit $x \in \sintegers$. Per Annahme wissen wir
+          $a \in \mathfrak{a}$ und $a \in \mathfrak{b}$.
+          Nach Idealdefinition ist somit ebenfalls
+          $xa \in \mathfrak{a}$ und $xa \in \mathfrak{b}$.
+          Es folgt $xa \in \mathfrak{a} \cap \mathfrak{b}$.
+    \item Aus $\idealintergers{v} = \idealintergers{a} \cap \idealintergers{b}$
+          folgt $\idealintergers{v} \subseteq \idealintergers{a}$,
+          $\idealintergers{v} \subseteq \idealintergers{b}$ und nach \autoref{lemma:70.6.1}
+          also $a | v$ und $b | v$. Die Zahl $v$ ist somit
+          ein gemeinsames Vielfaches von $a$ und $b$.
+          Angenommen $c$ ist ein weiteres gemeinsames Vielfaches von $a$ und $b$,
+          dann gilt $a | c$ und $b | c$.
+          Wieder nach \autoref{lemma:70.6.1} ist also
+          $\idealintergers{c} \subseteq \idealintergers{a}$ und
+          $\idealintergers{c} \subseteq \idealintergers{b}$.
+          Es folgt die logische Schlussfolgerung
           \begin{equation*}
-            \Integers{}a \cap \Integers{}b = \{z \in \Integers{}: z = pa \enspace
-            \text{und} \enspace pa = qb \enspace
-            \text{für alle} \enspace p,q \in \Integers{}\}
+            (\idealintergers{c} \subseteq \idealintergers{a}) \wedge
+            (\idealintergers{c} \subseteq \idealintergers{a}) \wedge
+            (\idealintergers{a} \cap \idealintergers{b} = \idealintergers{v})
+            \Rightarrow \idealintergers{c} \subseteq \idealintergers{v}.
           \end{equation*}
-          Die kleinste positive Lösung $pa = qb > 0$ bei gegebenen $a,b$ ist offensichtlich
-          $\kgv{a}{b}$. Alle weiteren Lösungen sind Vielfache dieser Lösung
-          und es entsteht die Lösungsmenge:
-          \begin{equation*}
-            \{z \in \Integers{}: z = n \cdot \kgv{a}{b}
-            \enspace \text{mit} \enspace n \in \Integers{} \}
-          \end{equation*}
-          Dies entspricht der Definition von $\Integers{}\kgv{a}{b}$.
-          Daher sind äquivalent
-          $v = \kgv{a}{b}$ und $\IdealIntegers{v} = \IdealIntegers{a} \cap \IdealIntegers{b}$.
+          Es gilt also $v \mid c$, sowie $a \mid v$ und $b \mid v$.
+          Die Zahl $v$ erfüllt somit alle Eingenschaften des
+          kleinsten gemeinsamen Vielfaches von $a$ und $b$.
   \end{enumerate}
 \end{proof}
 
 \subsection{Aufgabe 7}
-Seien $a,b,c \in \NaturalNumbers{}$. Zeigen Sie: Es gilt $a^2 + b^2 = c^2$ genau dann,
-wenn es $s,u,v \in \NaturalNumbers{}$ mit $u > v$ gibt, sodass entweder
+Seien $a,b,c \in \snatural$. Zeigen Sie: Es gilt $a^2 + b^2 = c^2$ genau dann,
+wenn es $s,u,v \in \snatural$ mit $u > v$ gibt, sodass entweder
 $a = 2suv$, $b = s(u^2 - v^2)$, $c = s(u^2 + v^2)$ oder
 $a = s(u^2 + r^2)$, $b = 2suv$, $c = s(u^2 + v^2)$.
 \begin{proof}

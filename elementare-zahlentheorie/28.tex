@@ -1,4 +1,4 @@
-\section{Seite 28}
+\section{(28) Natürliche, ganze und rationale Zahlen. Teilbarkeit. Primzahlen}
 
 \subsection{Aufgabe 1}
 Seien $a,b,c$ Ziffern aus der Menge $\{0,1,2,\dotsc,9\}$ und $a \neq 0$.
@@ -17,11 +17,11 @@ Zeigen Sie: 13 teilt die natürliche Zahl $abcabc$ (Zifferndarstellung).
 
 \subsection{Aufgabe 2}
 Sei $n$ eine natürliche Zahl, $n > 1$. Beweisen Sie: Aus $n \mid (n - 1)! + 1$
-folgt $n \in \PrimeNumbers{}$.
+folgt $n \in \sprime$.
 \begin{proof}
   \begin{lemma}
     \label{lemma:n_neq4_composite}
-    Sei $n \in \WholeNumbers{}$ eine zusammengesetzte Zahl, $n \neq 4$. Dann gilt:
+    Sei $n \in \swhole$ eine zusammengesetzte Zahl, $n \neq 4$. Dann gilt:
     \begin{equation*}
       n \mid (n - 1)!
     \end{equation*}
@@ -37,7 +37,7 @@ folgt $n \in \PrimeNumbers{}$.
     Das Produkt $\textcolor{Green}{b}$ aufeinanderfolgender Terme
     enthält zwangsweise ein Vielfaches von $\textcolor{Green}{b}$.
     Außerdem enthält $(ab - 1)!$ $\textcolor{Red}{a}$ und somit
-    $\textcolor{Red}{a}\textcolor{Green}{b} \mid (ab - 1)!$.\BigNewline
+    $\textcolor{Red}{a}\textcolor{Green}{b} \mid (ab - 1)!$.\bignewline
     Die obige Schreibweise ist korrekt, denn wir haben
     \begin{equation*}
       \begin{aligned}
@@ -72,8 +72,8 @@ für $1 \leq v < p$.
   \end{equation*}
   Es gilt außerdem:
   \begin{equation*}
-    \binom{n}{v} \in \WholeNumbers{} \quad
-    \text{für alle} \enspace n,v \in \WholeNumbers{}
+    \binom{n}{v} \in \swhole \quad
+    \text{für alle} \enspace n,v \in \swhole
   \end{equation*}
   Die Primzerlegung des Nenners muss
   vollständig in der des Zählers vorhanden sein.
@@ -82,14 +82,13 @@ für $1 \leq v < p$.
   Es folgt $p \mid \binom{p}{v}$.
 \end{proof}
 \noindent
-Es kann nun eine verallgemeinerte Eigenschaft der eben beschriebenen
-Teilbarkeit beschrieben werden. Der Beweis des folgenden Lemmas wir
-in der nächsten Aufgabe hilfreich sein.
+Die eben beschriebene Teilbarkeit lässt sich ganz wesentlich verallgemeinern.
+Der Beweis des folgenden Lemmas wir in der nächsten Aufgabe hilfreich sein.
 \begin{lemma}
   \label{lemma:p_divides_binom}
   Sei $p$ eine Primzahl. Dann gilt
   \begin{equation*}
-    p \mid \binom{p^n}{v} \quad \text{für alle} \enspace n \in \WholeNumbers{}
+    p \mid \binom{p^n}{v} \quad \text{für alle} \enspace n \in \swhole
     \enspace \text{und} \enspace 1 \leq v < p^n
   \end{equation*}
 \end{lemma}
@@ -107,7 +106,7 @@ in der nächsten Aufgabe hilfreich sein.
   \begin{enumerate}
     \item Sind $p$ und $v$ teilerfremd, gilt $p^n \mid \binom{p^n}{v}$ und es
           bleibt nichts mehr zu zeigen \parencite[64]{book:zahlentheorie}
-    \item Anderenfalls ist $v = p^{n-a}q$ mit $a \in \WholeNumbers{}$ und $0 < a \leq n$
+    \item Anderenfalls ist $v = p^{n-a}q$ mit $a \in \swhole$ und $0 < a \leq n$
           (bemerke $p$ und $q$ sind teilerfremd und $a > 0$ wegen $v < p^n$)
   \end{enumerate}
   \noindent
@@ -119,24 +118,25 @@ in der nächsten Aufgabe hilfreich sein.
     \end{align*}
   \end{widemath}
   \noindent
-  und somit $p^a \mid \binom{p^n}{v}$.
+  und somit $p^a \mid \binom{p^n}{v}$ aufgrund der
+  Teilerfremdheit von $p$ und $q$.
   Außerdem gilt $p \mid p^a$ und letztendlich $p \mid \binom{p^n}{v}$.
 \end{proof}
 
 \subsection{Aufgabe 5}
-Seien $p \in \PrimeNumbers{}$, $n \in \NaturalNumbers{}$ und $a,b \in \Integers{}$. Zeigen Sie durch Induktion
+Seien $p \in \sprime$, $n \in \snatural$ und $a,b \in \sintegers$. Zeigen Sie durch Induktion
 nach $n$: $p$ ist ein Teiler von
 $((a + b)^{p^n} - (a^{p^n} + b^{p^n}))$.
 \begin{proof}
-  Es ist $B$ die Menge aller Zahlen $n \in \NaturalNumbers{}$,
-  sodass für alle $a,b \in \Integers{}$ die behauptete Teilbarkeit richtig ist.
+  Es ist $B$ die Menge aller Zahlen $n \in \snatural$,
+  sodass für alle $a,b \in \sintegers$ die behauptete Teilbarkeit richtig ist.
   Es ist $1 \in B$, denn es gilt:
   \begin{widemath}
     \begin{equation*}
       \begin{aligned}
         (a + b)^p - (a^p + b^p) & =
         \underbrace{\left[a^p + \binom{p}{1}a^{p-1}b + \dotsb +
-        \binom{p}{p - 1}ab^{p-1} + b^p\right]}_{\text{Binomischen Lehrsatz \parencite[19]{book:zahlentheorie}}} - (a^p + b^p) \\
+        \binom{p}{p - 1}ab^{p-1} + b^p\right]}_{\text{Binomischer Lehrsatz \parencite[19]{book:zahlentheorie}}} - (a^p + b^p) \\
                                 & = \binom{p}{1}a^{p-1}b + \dotsb + \binom{p}{p - 1}ab^{p-1}
       \end{aligned}
     \end{equation*}
