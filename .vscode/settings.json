@@ -3,6 +3,13 @@
   "[latex]": {
     "editor.formatOnSave": true
   },
+  "latex-workshop.latexindent.args": [
+    "--cruft",
+    "%DIR%/",
+    "%TMPFILE%",
+    "--local=indentconfig.yaml",
+    "--yaml=defaultIndent: '%INDENT%'"
+  ],
   "cSpell.language": "de-de, en-us",
   "files.exclude": {
     "**/.git": true,
@@ -24,6 +31,5 @@
     "**/*.synctex.gz": true,
     "**/*.toc": true,
     "**/*.lot": true
-  },
-  "cSpell.words": ["Primzerlegung"]
+  }
 }

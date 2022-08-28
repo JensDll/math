@@ -1,4 +1,4 @@
-\section{(28) Natürliche, ganze und rationale Zahlen. Teilbarkeit. Primzahlen}
+\section{Natürliche, ganze und rationale Zahlen. Teilbarkeit. Primzahlen (28)}
 
 \subsection{Aufgabe 1}
 Seien $a,b,c$ Ziffern aus der Menge $\{0,1,2,\dotsc,9\}$ und $a \neq 0$.
@@ -18,49 +18,50 @@ Zeigen Sie: 13 teilt die natürliche Zahl $abcabc$ (Zifferndarstellung).
 \subsection{Aufgabe 2}
 Sei $n$ eine natürliche Zahl, $n > 1$. Beweisen Sie: Aus $n \mid (n - 1)! + 1$
 folgt $n \in \sprime$.
+
+\begin{lemma}
+  \label{lemma:n_neq4_composite}
+  Sei $n \in \swhole$ eine zusammengesetzte Zahl, $n \neq 4$. Dann gilt:
+  \begin{equation*}
+    n \mid (n - 1)!
+  \end{equation*}
+\end{lemma}
+
 \begin{proof}
-  \begin{lemma}
-    \label{lemma:n_neq4_composite}
-    Sei $n \in \swhole$ eine zusammengesetzte Zahl, $n \neq 4$. Dann gilt:
-    \begin{equation*}
-      n \mid (n - 1)!
-    \end{equation*}
-  \end{lemma}
-  \begin{proof}
-    Es ist $n = ab$ mit $a,b \geq 2$. Wir können $(n - 1)!$ wie folgt aufschreiben:
-    \begin{equation*}
-      n = \textcolor{Red}{a}\textcolor{Green}{b} \mid
-      1 \cdot 2 \dotsm \textcolor{Red}{a}
-      \textcolor{Green}{(a + 1)(a + 2) \dotsm (a + b)}
-      \dotsm (ab - 1) = (ab - 1)!
-    \end{equation*}
-    Das Produkt $\textcolor{Green}{b}$ aufeinanderfolgender Terme
-    enthält zwangsweise ein Vielfaches von $\textcolor{Green}{b}$.
-    Außerdem enthält $(ab - 1)!$ $\textcolor{Red}{a}$ und somit
-    $\textcolor{Red}{a}\textcolor{Green}{b} \mid (ab - 1)!$.\bignewline
-    Die obige Schreibweise ist korrekt, denn wir haben
-    \begin{equation*}
-      \begin{aligned}
-             &  & a + b & \leq ab - 1                                     \\
-        \iff &  & 0     & \leq ab - a - b - 1                             \\
-        \iff &  & 2     & \leq \underbrace{(a - 1)}_{\geq 1}
-        \underbrace{\textcolor{Cyan}{(b - 1)}}_{\textcolor{Cyan}{\geq 2}} \\
-      \end{aligned}
-    \end{equation*}
-    mit $a,b \geq 2$ und niemals $a = b = 2$, da $n \neq 4$.
-    Also mindestens \textcolor{Cyan}{einer} der beiden $\textcolor{Cyan}{\geq 3}$.
-  \end{proof}
-  \noindent
+  Es ist $n = ab$ mit $a,b \geq 2$. Wir können $(n - 1)!$ wie folgt aufschreiben:
+  \begin{equation*}
+    n = \textcolor{Red}{a}\textcolor{Green}{b} \mid
+    1 \cdot 2 \dotsm \textcolor{Red}{a}
+    \textcolor{Green}{(a + 1)(a + 2) \dotsm (a + b)}
+    \dotsm (ab - 1) = (ab - 1)!
+  \end{equation*}
+  Das Produkt $\textcolor{Green}{b}$ aufeinanderfolgender Terme
+  enthält zwangsweise ein Vielfaches von $\textcolor{Green}{b}$.
+  Außerdem enthält $(ab - 1)!$ $\textcolor{Red}{a}$ und somit
+  $\textcolor{Red}{a}\textcolor{Green}{b} \mid (ab - 1)!$.\bignewline
+  Die obige Schreibweise ist korrekt, denn wir haben
+  \begin{equation*}
+    \begin{aligned}
+                      &  & a + b & \leq ab - 1                          \\
+      \Leftrightarrow &  & 0     & \leq ab - a - b - 1                  \\
+      \Leftrightarrow &  & 2     & \leq \underbrace{(a - 1)}_{\geq 1}
+      \underbrace{\textcolor{Cyan}{(b - 1)}}_{\textcolor{Cyan}{\geq 2}} \\
+    \end{aligned}
+  \end{equation*}
+  mit $a,b \geq 2$ und niemals $a = b = 2$, da $n \neq 4$.
+  Also mindestens \textcolor{Cyan}{einer} der beiden $\textcolor{Cyan}{\geq 3}$.
+\end{proof}
+
+\begin{proof}
   \autoref{lemma:n_neq4_composite} zeigt, dass $n \mid (n - 1)!$ für alle $n$ zusammengesetzt.
-  Man kann also schließen, dass alle Zahlen mit der Eigenschaft $n \mid (n - 1)! + 1$
+  Man kann also schließen, wegen $n \neq 1$,
+  dass alle Zahlen mit der Eigenschaft $n \mid (n - 1)! + 1$
   nicht zusammengesetzt und daher Prim sind.
 \end{proof}
 
 \subsection{Aufgabe 3}
 Sei $p_n$ die $n$-te Primzahl, d.\,h. $p_1 = 2$, $p_2 = 3$ usw. Zeigen Sie:
 $p_n \leq 2^{2^{n - 1}}$ für alle $n \geq 1$.
-\begin{proof}
-\end{proof}
 
 \subsection{Aufgabe 4}
 Sei $p$ eine Primzahl. Beweisen Sie: $p$ ist ein Teiler von $\binom{p}{v}$
@@ -89,7 +90,7 @@ Der Beweis des folgenden Lemmas wir in der nächsten Aufgabe hilfreich sein.
   Sei $p$ eine Primzahl. Dann gilt
   \begin{equation*}
     p \mid \binom{p^n}{v} \quad \text{für alle} \enspace n \in \swhole
-    \enspace \text{und} \enspace 1 \leq v < p^n
+    \enspace \text{mit} \enspace 1 \leq v < p^n
   \end{equation*}
 \end{lemma}
 \begin{proof}
@@ -105,12 +106,12 @@ Der Beweis des folgenden Lemmas wir in der nächsten Aufgabe hilfreich sein.
   Es ist somit zu sehen, dass $p^n \mid v\binom{p^n}{v}$.
   \begin{enumerate}
     \item Sind $p$ und $v$ teilerfremd, gilt $p^n \mid \binom{p^n}{v}$ und es
-          bleibt nichts mehr zu zeigen \parencite[64]{book:zahlentheorie}
-    \item Anderenfalls ist $v = p^{n-a}q$ mit $a \in \swhole$ und $0 < a \leq n$
-          (bemerke $p$ und $q$ sind teilerfremd und $a > 0$ wegen $v < p^n$)
+          bleibt nichts mehr zu zeigen \parencite[64]{book:zahlentheorie}.
+    \item Anderenfalls ist $v = p^{n-a}q$ mit $a \in \swhole$ und $0 < a \leq n$.
+          Die Zahlen $p$ und $q$ sind teilerfremd und es gilt $a > 0$ wegen $v < p^n$.
   \end{enumerate}
   \noindent
-  Es gilt daher
+  Wir haben daher
   \begin{widemath}
     \begin{align*}
       p^{n-a}q\binom{p^n}{v} & = p^n\binom{p^n - 1}{v - 1} \\
@@ -120,7 +121,8 @@ Der Beweis des folgenden Lemmas wir in der nächsten Aufgabe hilfreich sein.
   \noindent
   und somit $p^a \mid \binom{p^n}{v}$ aufgrund der
   Teilerfremdheit von $p$ und $q$.
-  Außerdem gilt $p \mid p^a$ und letztendlich $p \mid \binom{p^n}{v}$.
+  Außerdem gilt $p \mid p^a$ und durch die
+  Transitivität der Teilbarkeit $p \mid \binom{p^n}{v}$.
 \end{proof}
 
 \subsection{Aufgabe 5}
@@ -141,7 +143,7 @@ $((a + b)^{p^n} - (a^{p^n} + b^{p^n}))$.
       \end{aligned}
     \end{equation*}
   \end{widemath}
-  $p$ teilt die Summe, da jeder Summand als ein Vielfaches
+  Primzahl $p$ teilt die Summe, da jeder Summand als ein Vielfaches
   von $\binom{p}{1},\dotsc,\binom{p}{p - 1}$ durch $p$ teilbar ist.
   Sei $n \in B$. Um $n + 1 \in B$ zu verifizieren, rechnen wir wie folgt:
   \begin{equation*}

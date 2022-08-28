@@ -1,0 +1,35 @@
+\section{Integritätsringe. Teilbarkeitstheorie in Integritäts\-ringen (110)}
+
+\subsection{Aufgabe 1}
+Sei $R$ ein Integritätsring, seien $a,b,c,d \in R$. Zeigen Sie:
+\begin{enumerate}[label=\alph*)]
+  \item Aus $\associated{a}{b}$ und $\associated{c}{d}$ folgt:
+        \enspace $\associated{ac}{bd}$.
+  \item Aus $\associated{a}{b}$ und $\associated{ac}{bd}$ und
+        $a \neq 0$ folgt: \enspace $\associated{c}{d}$.
+\end{enumerate}
+
+\begin{proof}
+  \begin{enumerate}[label=\alph*)]
+    \item Es folgt direkt aus Rechenregel 3)
+          der Teilbarkeit \parencite[23]{book:zahlentheorie}:
+          Aus $a \mid b$ und $c \mid d$ folgt $ac \mid bd$;
+          aus $b \mid a$ und $d \mid c$ folgt $bd \mid ac$.
+    \item Wir zeigen $c \mid d$ aus dem Gegebenen:
+          \begin{align*}
+             & \text{Es gilt} \quad b \mid a
+            \underset{\text{mit $c \in R$}}{\Rightarrow} bc \mid \textcolor{Green}{ac} \\
+             & \text{Es gilt} \quad \textcolor{Green}{ac} \mid bd
+            \underset{\text{transitiv}}{\Rightarrow} bc \mid bd
+            \underset{\text{kürzen}}{\Rightarrow} c \mid d
+          \end{align*}
+          Wir zeigen $d \mid c$ aus dem Gegebenen:
+          \begin{align*}
+             & \text{Es gilt} \quad a \mid b
+            \underset{\text{mit $d \in R$}}{\Rightarrow} ad \mid \textcolor{Green}{bd} \\
+             & \text{Es gilt} \quad \textcolor{Green}{bd} \mid ac
+            \underset{\text{transitiv}}{\Rightarrow} ad \mid ac
+            \underset{\text{kürzen}}{\Rightarrow} d \mid c
+          \end{align*}
+  \end{enumerate}
+\end{proof}

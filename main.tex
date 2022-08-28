@@ -11,6 +11,8 @@
 \usepackage{setspace}
 \usepackage[dvipsnames]{xcolor}
 
+\usepackage[shortcuts=ac]{glossaries-extra}
+
 \usepackage[unicode]{hyperref}
 \hypersetup{
   linkcolor = Red,
@@ -26,16 +28,18 @@
 \setlist{
   topsep=0pt,
   itemsep=0pt,
-  parsep=0pt
+  parsep=0pt,
+  align=left,
+  leftmargin=*
 }
 
 \usepackage{tikz}
 \usetikzlibrary{
   positioning,
   calc,
-  shapes.multipart,
   arrows.meta,
-  fit
+  fit,
+  matrix
 }
 
 \usepackage{siunitx}
@@ -43,6 +47,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{xparse}
 
 \newtheorem{lemma}{Lemma}
 \newcommand*{\lemmaautorefname}{Lemma}

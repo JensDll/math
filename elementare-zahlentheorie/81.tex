@@ -1,0 +1,78 @@
+\section[Über die Verteilung und Darstellung von Primzahlen (81)]
+ {Über die Verteilung und Darstellung von\\Primzahlen (81)}
+
+\subsection{Aufgabe 1}
+Zeigen Sie mit Hilfe des Kriterium von \texttt{Lucas-Lehmer}
+\parencite[78]{book:zahlentheorie},
+dass die Zahlen $M_p = 2^p - 1$ für $p = 3$, $p = 5$ und
+$p = 7$ Primzahlen sind.
+
+\subsection{Aufgabe 2}
+Zeigen Sie direkt: Es gibt unendliche Primzahlen der Form:
+\begin{enumerate}[label=\alph*)]
+  \item $6k + 5$, $k \in \swhole$
+  \item $4k + 3$, $k \in \swhole$
+\end{enumerate}
+
+\begin{lemma}
+  Sind $a_1,\dotsc,a_k$ Zahlen der Form $a_v = qb_v + 1$, $q,b_v \in \sintegers$,
+  $1 \leq v \leq k$. Dann ist auch ihr Produkt $a_1a_2 \dotsm a_k$ von
+  der Form $qb + 1$, $b \in \sintegers$.
+\end{lemma}
+
+\begin{proof}
+  Der Beweis ergibt sich unmittelbar durch Induktion, da
+  $(qm + 1)(qn + 1) = q(qmn + m + n) + 1$ für alle $m,n \in \sintegers$.
+\end{proof}
+\begin{proof}
+  \begin{enumerate}[label=\alph*)]
+    \item Angenommen es gäbe nur endlich viele Primzahlen der Form $6k + 5$,
+          etwa $p_1,p_2,\dotsc,p_s$ mit $p_1 \defined 2$.
+          Man betrachte die Zahl $a \defined (2 \cdot 3)(p_1p_2 \dotsm p_s) - 1
+            \in \snatural$. Diese Zahl ist von der Form $6k + 5$.
+          Sei $a = q_1^{m1}q_2^{m2} \dotsm q_t^{m_t}$ die Primzerlegung von $a$.
+          Jede Primzahl $q_i$ ist von allen Primzahlen $2,3,p_1,\dotsc,p_s$
+          verschieden, da $1$ nicht durch $q_i$ teilbar ist, $i = 1,2,\dots,t$.
+          Nun muss aber mindestens eine Primzahl $q_i$ von der Form $6k + 5$ sein;
+          denn alle anderen Möglichkeiten können wie folgt ausgeschlossen werden:
+          \begin{enumerate}
+            \item Die Primzahlen $q_i$ können nicht gerade oder
+                  sonstig teilbar sein,
+                  denn dann wären es keine Primzahlen.
+                  \Ac{dh} die folgenden Formen fallen weg:
+                  \begin{equation*}
+                    6k + 0,\, 6k + 2 = 2(3k + 1),\, 6k + 3 = 3(2k + 1),\,
+                    6k + 4 = 2(3k + 2)
+                  \end{equation*}
+            \item Zusätzlich können sie nicht alle in der Form $6k + 1$ sein; denn
+                  so wäre nach dem eingangs bewiesenen auch die Zahl
+                  $a = q_1^{m1}q_2^{m2} \dotsm q_t^{m_t}$ von
+                  der Form $6k + 1$, was nicht möglich ist.
+          \end{enumerate}
+    \item Angenommen es gäbe nur endlich viele Primzahlen der Form $4k + 3$,
+          etwa $p_1,p_2,\dotsc,p_s$ mit $p_1 \defined 2$.
+          Man betrachte die Zahl $a \defined (2 \cdot 2)(p_1p_2 \dotsm p_s) - 1
+            \in \snatural$. Diese Zahl ist von der Form $4k + 3$.
+          Sei $a = q_1^{m1}q_2^{m2} \dotsm q_t^{m_t}$ die Primzerlegung von $a$.
+          Jede Primzahl $q_i$ ist von allen Primzahlen $2,p_1,\dotsc,p_s$
+          verschieden, da $1$ nicht durch $q_i$ teilbar ist, $i = 1,2,\dots,t$.
+          Nun muss aber mindestens eine Primzahl $q_i$ von der Form $4k + 3$ sein;
+          denn alle anderen Möglichkeiten können wie folgt ausgeschlossen werden:
+          \begin{enumerate}
+            \item Die Primzahlen $q_i$ können nicht gerade oder sonstig teilbar sein,
+                  denn dann wären es keine Primzahlen.
+                  \Ac{dh} die folgenden Formen fallen weg:
+                  \begin{equation*}
+                    4k + 0,\, 4k + 2 = 2(2k + 1)
+                  \end{equation*}
+            \item Zusätzlich können sie nicht alle in der Form $4k + 1$ sein; denn
+                  so wäre nach dem eingangs bewiesenen auch die Zahl
+                  $a = q_1^{m1}q_2^{m2} \dotsm q_t^{m_t}$ von
+                  der Form $4k + 1$, was nicht möglich ist.
+          \end{enumerate}
+  \end{enumerate}
+\end{proof}
+
+\subsection{Aufgabe 3}
+Zeigen Sie: Für alle natürlichen Zahlen $n \geq 2$ gilt:
+$n < 2^{\primesequencecountfunc{n}} \cdot \sqrt{n}$.

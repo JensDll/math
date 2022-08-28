@@ -1,36 +1,35 @@
-\section{(53) Anwendung des Hauptsatzes}
+\section[Anwendung des Hauptsatzes. Zahlentheorie im Körper \texorpdfstring{$\srational$}{Q} (53)]
+ {Anwendung des Hauptsatzes. Zahlentheorie im\\
+  Körper \texorpdfstring{$\srational$}{Q} (53)}
 
 \subsection{Aufgabe 1}
 Sei $p$ eine Primzahl, $a,b$ seien von Null verschiedene rationale Zahlen,
-$a + b \neq 0$. Zeigen Sie: $\vielfachfunktion{a + b} \geq \min{(\vielfachfunktion{a}, \vielfachfunktion{b})}$
+$a + b \neq 0$. Zeigen Sie: $\primecountfunc{}{a + b} \geq
+  \min{(\primecountfunc{a}, \primecountfunc{b})}$
 \begin{proof}
-  Sei $m = \min{(\vielfachfunktion{a}, \vielfachfunktion{b})}$. Es gilt $p^m \mid a$, $p^m \mid b$
+  Sei $m = \min{(\primecountfunc{a}, \primecountfunc{b})}$. Es gilt $p^m \mid a$, $p^m \mid b$
   und damit auch $p^m \mid a + b$. Wir schreiben $a + b = p^{m}v$
   mit $v \in \sintegers$ und zeigen durch umformen:
   \begin{align*}
-    \vielfachfunktion{a + b} & = \vielfachfunktion{p^{m}v}                                                 \\
-                             & = \vielfachfunktion{p^m} + \vielfachfunktion{v}                             \\
-                             & = m + \vielfachfunktion{v}                                                  \\
-                             & = \min{(\vielfachfunktion{a}, \vielfachfunktion{b})} + \vielfachfunktion{v}
+    \primecountfunc{a + b} & = \primecountfunc{p^{m}v}                                             \\
+                           & = \primecountfunc{p^m} + \primecountfunc{v}                           \\
+                           & = m + \primecountfunc{v}                                              \\
+                           & = \min{(\primecountfunc{a}, \primecountfunc{b})} + \primecountfunc{v}
   \end{align*}
-  Es ist zu sehen $\vielfachfunktion{a + b} \geq \min{(\vielfachfunktion{a}, \vielfachfunktion{b})}$.
+  Es ist zu sehen $\primecountfunc{a + b} \geq \min{(\primecountfunc{a}, \primecountfunc{b})}$.
 \end{proof}
 
 \subsection{Aufgabe 2}
 Für $x$ reell bezeichne $\floor{x}$ die größte ganze Zahl $m$ mit $m \leq x$.
 Zeigen Sie, dass für $p$ eine Primzahl und $n \in \swhole$ beliebig gilt:
 \begin{equation*}
-  \vielfachfunktion{n!} = \sum_{i=0}^{\infty} \floor*{\frac{n}{p^i}}
+  \primecountfunc{n!} = \sum_{i=0}^{\infty} \floor*{\frac{n}{p^i}}
 \end{equation*}
-\begin{proof}
-\end{proof}
 
 \subsection{Aufgabe 3}
 Seien $n \in \snatural$, $a_1,\dotsc,a_n \in \sintegers$.
 Die reelle Zahl $x$ erfülle $x^n + a_1x^{n-1} + \dotsb + a_{n - 1}x + a_n = 0$.
 Zeigen Sie: $x$ ist entweder irrational oder ganz.
-\begin{proof}
-\end{proof}
 
 \subsection{Aufgabe 4}
 Seien $q_1,\dotsc,q_s$ Primzahlen, $b \defined q_1 \cdot q_2 \dotsm q_s \in \swhole$
@@ -43,8 +42,8 @@ Zeigen Sie: Jede Zahl $q_i, 1 \leq i \leq s$, teilt wenigstens eine der Zahlen $
   die folgende Gleichung:
   \begin{equation*}
     \begin{aligned}
-           &  & \frac{1}{b} & = \frac{v}{m_1m_2 \dotsm m_k} \\
-      \iff &  & bv          & = m_1m_2 \dotsm m_k
+      \frac{1}{b} & = \frac{v}{m_1m_2 \dotsm m_k} \\
+      bv          & = m_1m_2 \dotsm m_k
     \end{aligned}
   \end{equation*}
   Es ist zu sehen $b \mid m_1m_2 \dotsm m_k$ und damit die zu zeigende Aussage.
@@ -54,30 +53,30 @@ Zeigen Sie: Jede Zahl $q_i, 1 \leq i \leq s$, teilt wenigstens eine der Zahlen $
 Berechnen Sie die Fibonaccidarstellung des Bruches $\frac{21}{23}$.
 \begin{proof}
   $n_1 = \min{\{ w \in \swhole : w \geq \frac{23}{21} \}} = 2$.
-  Der größte in $\frac{21}{23}$ enthaltene Stammbruch ist $\frac{1}{2}$:
+  Der größte in $\frac{21}{23}$ enthaltene Stammbruch ist $\frac{1}{2}$.
   \begin{equation*}
-    \frac{21}{23} = \frac{1}{2} + \frac{a_1}{b_1} \quad \text{mit}
+    \text{Es ist} \quad \frac{21}{23} = \frac{1}{2} + \frac{a_1}{b_1} \quad \text{mit}
     \quad \frac{a_1}{b_1} = \frac{21}{23} - \frac{1}{2} =
     \frac{2 \cdot 21 - 23}{2 \cdot 23} = \frac{19}{46}.
   \end{equation*}
   $n_2 = \min{\{ w \in \swhole : w \geq \frac{46}{19} \}} = 3$.
-  Der größte in $\frac{19}{46}$ enthaltene Stammbruch ist $\frac{1}{3}$:
+  Der größte in $\frac{19}{46}$ enthaltene Stammbruch ist $\frac{1}{3}$.
   \begin{equation*}
-    \frac{19}{46} = \frac{1}{3} + \frac{a_2}{b_2} \quad \text{mit}
+    \text{Es ist} \quad \frac{19}{46} = \frac{1}{3} + \frac{a_2}{b_2} \quad \text{mit}
     \quad \frac{a_2}{b_2} =
     \frac{3 \cdot 19 - 46}{3 \cdot 46} = \frac{11}{138}.
   \end{equation*}
   $n_3 = \min{\{ w \in \swhole : w \geq \frac{138}{11} \}} = 13$.
-  Der größte in $\frac{11}{138}$ enthaltene Stammbruch ist $\frac{1}{13}$:
+  Der größte in $\frac{11}{138}$ enthaltene Stammbruch ist $\frac{1}{13}$.
   \begin{equation*}
-    \frac{11}{148} = \frac{1}{13} + \frac{a_3}{b_3} \quad \text{mit}
+    \text{Es ist} \quad \frac{11}{148} = \frac{1}{13} + \frac{a_3}{b_3} \quad \text{mit}
     \quad \frac{a_3}{b_3} =
     \frac{13 \cdot 11 - 138}{13 \cdot 138} = \frac{5}{1794}.
   \end{equation*}
   $n_4 = \min{\{ w \in \swhole : w \geq \frac{1794}{5} \}} = 359$.
-  Der größte in $\frac{5}{1794}$ enthaltene Stammbruch ist $\frac{1}{359}$:
+  Der größte in $\frac{5}{1794}$ enthaltene Stammbruch ist $\frac{1}{359}$.
   \begin{equation*}
-    \frac{5}{1794} = \frac{1}{359} + \frac{a_4}{b_4} \quad \text{mit}
+    \text{Es ist} \quad \frac{5}{1794} = \frac{1}{359} + \frac{a_4}{b_4} \quad \text{mit}
     \quad \frac{a_4}{b_4} =
     \frac{359 \cdot 5 - 1794}{359 \cdot 1794} = \frac{1}{644046}.
   \end{equation*}
@@ -93,11 +92,7 @@ Zeigen Sie: Es gibt keine ägyptische Bruchdarstellung
 $\frac{21}{23} = \frac{1}{n_1} + \frac{1}{n_2} + \dotsb + \frac{1}{n_k}$,
 $1 < n_1 < n_2 < \dotsb < n_k$, mit höchstens 3 Stammbrüchen
 (d.\,h. notwendig $k \geq 4$).
-\begin{proof}
-\end{proof}
 
 \subsection{Aufgabe 7}
 Beweisen Sie die angegebene Eindeutigkeitsaussage für die Fibonaccidarstellung
 \parencite[53]{book:zahlentheorie}.
-\begin{proof}
-\end{proof}
